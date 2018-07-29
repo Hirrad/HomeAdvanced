@@ -1,25 +1,66 @@
 'use strict';
 
-// var d = document;
-// var btn = document.querySelector('.btn');
-//
-// btn.addEventListener('click', e => console.log('click 1'));
-//
-// btn.addEventListener('click', e => console.log('click 2'), true);
-//
-// btn.onclick = e => console.log('click 3');
-//
+///////////////////// Beginning of variablesBe
 
-// 1. (переменные)
-// - Объявите две переменные: admin и name.
-// - Запишите в name строку "Harry".
-// - Скопируйте значение из name в admin.
-// - Выведите admin (должно вывести "Harry").
+var TextWindows = {},
+    elJs,
+    elHtml,
+    elWin,
+    el,
+    menuFirstLevel,
+    jsText,
+    htmlText,
+    winText,
+    elTask,
+    winTask;
 
-// var admin, name;
-// name="Harry";
-// admin=name;
-// console.log(admin);
+jsText = 'Тут будет js';
+htmlText = 'Тут будет html';
+winText = 'Тут будет Выводимая информация';
+winTask = 'Задание';
+
+el = document.querySelector('.menu__first-level').parentElement.children[1];
+elJs = document.querySelector('.conteinerWin__flex__js');
+elHtml = document.querySelector('.conteinerWin__flex__html');
+elWin = document.querySelector('.conteinerWin__text');
+elTask = document.querySelector('.conteinerWin__task');
+
+menuFirstLevel = document.querySelector('.menu__first-level');
+elJs.innerHTML = jsText;
+elHtml.innerHTML = htmlText;
+elWin.innerHTML = winText;
+//
+/////////////////////End of variables
+/////////////////// Start objects
+
+function Dz(html, js, win, fun) {
+    this.js = js;
+    this.fun = fun;
+    this.html = html;
+    this.win = win;
+    this.jsBr = function (js) {
+        return js.replace(/;/g, ';<Br>');
+    }(this.js);
+}
+
+/////////////////// End of objects
+///// Begin 401
+var win401 = '1. (\u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0435)<br>\n- \u041E\u0431\u044A\u044F\u0432\u0438\u0442\u0435 \u0434\u0432\u0435 \u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0435: admin \u0438 name.<br>\n- \u0417\u0430\u043F\u0438\u0448\u0438\u0442\u0435 \u0432 name \u0441\u0442\u0440\u043E\u043A\u0443 "Harry".<br>\n- \u0421\u043A\u043E\u043F\u0438\u0440\u0443\u0439\u0442\u0435 \u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435 \u0438\u0437 name \u0432 admin.<br>\n- \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 admin (\u0434\u043E\u043B\u0436\u043D\u043E \u0432\u044B\u0432\u0435\u0441\u0442\u0438 "Harry").<br>';
+
+var js401 = 'var admin, name;\nname="Harry";\nadmin=name;\nconsole.log(admin);';
+
+var html401 = '';
+
+var fun401 = function fun401() {
+    var admin, name;
+    name = "Harry";
+    admin = name;
+    console.log(admin);
+};
+
+TextWindows[401] = new Dz(html401, js401, win401, fun401);
+///// End 401
+
 
 // 2. (переменные)
 // - Выберите какую-то формулу (например, математическую)
@@ -83,15 +124,14 @@
 // else {
 //     alert("Вы ввели данные при которых треугольник не существует! Помните, что сумма любых двоих сторон должна быть больше третей!!!")
 // }
-
-// 3. (if/else)
-//     - Объявите переменную с каким-то числом.
-// - Используя конструкцию if..else, напишите код,
-//     который выводит в консоль:
-//     • 1, если значение больше нуля,
-//   • -1, если значение меньше нуля,
-//   • 0, если значение равно нулю.
-//
+// // 3. (if/else)
+// //     - Объявите переменную с каким-то числом.
+// // - Используя конструкцию if..else, напишите код,
+// //     который выводит в консоль:
+// //     • 1, если значение больше нуля,
+// //   • -1, если значение меньше нуля,
+// //   • 0, если значение равно нулю.
+// //
 // var textNumber=document.getElementById('textNumber');
 // var textNumberPrevious= textNumber.previousElementSibling;
 // textNumberPrevious.textContent='Введите число и нажмите Enter';
@@ -120,457 +160,71 @@
 //             case(this.value == 0) :   text.textContent= "Равно нулю";
 //         }
 //     }
-// e/
+//
 // }
 // textNumber.addEventListener('keypress', Num, fese);
+//
 
 
-//4.Switch не до eланая
-// function choice(element) {
-//     switch (element) {
-//         case '0': return 'Ноль'; break;
-//         case '1': return 'Один'; break;
-//         case '2': return 'Два'; break;
-//         case '3': return 'Три'; break;
-//         case '4': return 'Четыри'; break;
-//         case '5': return 'Пять'; break;
-//         case '6': return 'Шесть'; break;
-//         case '7': return 'Семь'; break;
-//         case '8': return 'Восемь'; break;
-//         case '9': return 'Девять';
-//     }
-// return units;
-//
-// }
-// choice(4);
-// console.log(units);
-// // var textNumber=document.geeElementById('textNumber');
-// function numberWords(e){
-//     var units, dicker, oneDozen;
-//     console.log(this.value.length);
-//     elPrevious=this.previousElementSibling;
-//     console.log(this.value[0], this.value[1]);
-//     if(e.target.value.length>2) {
-//         this.value='';
-//
-//
-//         elPrevious.textContent='Вы должны ввести не больше 2 цифр!';
-//
-//
-//     }
-//     else if(e.keyCode='13' && this.value[1]==undefined){
-//         // console.log('Эденицы первый иф '+this.value[0]);
-//         choice(this.value[0]);
-//         console.log('получилось?' +units);
-//
-//     }
-// else if (e.keyCode='13' && this.value[0]=='1' && this.value.length=='2') {
-//     switch (this.value) {
-//         case '10':
-//             return oneDozen = 'Десять';
-//             break;
-//         case '11':
-//             return oneDozen = 'Одинадцать';
-//             break;
-//         case '12':
-//             return oneDozen = 'Двенадцать';
-//             break;
-//         case '13':
-//             return oneDozen = 'Тринадцать';
-//             break;
-//         case '14':
-//             return oneDozen = 'Четырнадцать';
-//             break;
-//         case '15':
-//             return oneDozen = 'Пятьнадцать';
-//             break;
-//         case '16':
-//             return oneDozen = 'Шестьнадцать';
-//             break;
-//         case '17':
-//             return oneDozen = 'Семьнадцать';
-//             break;
-//         case '18':
-//             return oneDozen = 'Восемьнадцать';
-//             break;
-//         case '19':
-//             return oneDozen = 'Девятьнадцать';
-//
-//     }
-// }
-// else if (e.keyCode='13' && this.value[0]!=='1' && this.value.length=='2'){
-//         switch (this.value) {
-//             case '2': return dicker='Двадцать'; break;
-//             case '3': return dicker='Тридцать'; break;
-//             case '4': return dicker='Сорок'; break;
-//             case '5': return dicker='пятьдесят'; break;
-//             case '6': return dicker='Шестьдесят'; break;
-//             case '7': return dicker='Семьдесят'; break;
-//             case '8': return dicker='Восемьдесят'; break;
-//             case '9': return dicker='Девяность';
-//
-//
-//         }
-// }
+var win419 = '19. (events)\n\u0421\u0434\u0435\u043B\u0430\u0442\u044C \u043A\u0430\u043A\u043E\u0439-\u0442\u043E header \u0441 \u043A\u043D\u043E\u043F\u043A\u043E\u0439 "\u041E\u0431\u0440\u0430\u0442\u043D\u044B\u0439 \u0437\u0432\u043E\u043D\u043E\u043A".\n   \u041F\u043E \u043D\u0430\u0436\u0430\u0442\u0438\u044E \u043D\u0430 \u043A\u043D\u043E\u043F\u043A\u0443 \u0434\u043E\u043B\u0436\u0435\u043D \u043F\u043E\u044F\u0432\u043B\u044F\u0442\u044C\u0441\u044F \u0432\u044B\u043F\u0430\u0434\u0430\u044E\u0449\u0438\u0439 \u0431\u043B\u043E\u043A,\n    \u0432 \u043A\u043E\u0442\u043E\u0440\u043E\u043C \u0431\u0443\u0434\u0435\u0442 \u043F\u043E\u043B\u0435 \u0434\u043B\u044F \u0432\u0432\u043E\u0434\u0430 \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0430 \u0438 \u043A\u043D\u043E\u043F\u043A\u0430 "\u0414\u0430!".\n   \u041F\u043E \u043D\u0430\u0436\u0430\u0442\u0438\u044E \u043D\u043E \u043A\u043D\u043E\u043F\u043A\u0443 \u043F\u0440\u043E\u0432\u0435\u0440\u044F\u0435\u043C \u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435 \u043F\u043E\u043B\u044F (el.value)\n \u0415\u0441\u043B\u0438 \u043E\u043D\u043E \u043F\u0443\u0441\u0442\u043E\u0435, \u0442\u043E \u043D\u0438\u0447\u0435\u0433\u043E \u043D\u0435 \u0434\u0435\u043B\u0430\u0435\u043C.\n   \u0415\u0441\u043B\u0438 \u043E\u043D\u043E \u043D\u0435 \u043F\u0443\u0441\u0442\u043E\u0435, \u0442\u043E \u0432\u044B\u0432\u043E\u0434\u0438\u043C \u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435 \u0432 \u043A\u043E\u043D\u0441\u043E\u043B\u044C \u0438 \u043F\u0440\u044F\u0447\u0435\u043C \u0431\u043B\u043E\u043A.\n   \u041A\u043B\u0438\u043A \u0437\u0430 \u043F\u0440\u0435\u0434\u0435\u043B\u0430\u043C\u0438 \u0431\u043B\u043E\u043A\u0430 \u0434\u043E\u043B\u0436\u0435\u043D \u043F\u0440\u044F\u0442\u0430\u0442\u044C \u0431\u043B\u043E\u043A.';
 
+var js419 = 'var button, educationOnOff, phone;\nbutton=document.querySelector(\'#buttonConteiner__button\');\neducationOnOff=document.querySelector(\'.formOnOff\');\nphone=document.querySelector(\'#phone\');\nbutton.addEventListener(\'click\', function (e){\n\n    educationOnOff.style.display=\'inline\';\n\n} );\neducationOnOff.addEventListener(\'submit\', function (e){\n\n    e.preventDefault();\n\n        if(phone.value==0){\n        alert(\'\u0412\u044B \u043D\u0435 \u0432\u0432\u0435\u043B\u0438 \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u043D\u044B\u0439 \u043D\u043E\u043C\u0435\u0440!\');\n    }\n    else {\n        alert(phone.value);\n        phone.value = \'\';\n        educationOnOff.style.display = \'none\';\n\n    }\n\n} );\neducationOnOff.firstElementChild.addEventListener(\'click\', function (e){\n;\n    if(e.target.tagName==\'ARTICLE\'){\n        educationOnOff.style.display=\'none\';\n    }\n\n} );';
 
-//     console.log(`эденицы = ${units} десятки = ${dicker} от 10 до 19=${oneDozen}`);
-// }
-// textNumber.addEventListener('keypress', numberWords, false);
+var html419 = '<article class="buttonConteiner" id="buttonConteiner">\n        <a href="#" class="button_src"><button class="buttonConteiner__button" id="buttonConteiner__button">\u041E\u0431\u0440\u0430\u0442\u043D\u044B\u0439 \u0437\u0432\u043E\u043D\u043E\u043A</button></a>\n    </article>\n    <section class="formOnOff">\n    <article class="conteiner_form" id="conteiner_form">\n\n        <form action="index1.html" class="conteiner_form__form"><label for="phone" class="conteiner_form__input">\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0442\u0435\u043B\u0435\u0444\u043E\u043D \u0438 \u043D\u0430\u0436\u043C\u0438\u0442\u0435 \u041E\u041A</label><input type="text" id="phone" class="conteiner_form__input">\n            <input type="submit" value="OK!">\n        </form>\n    </article>\n    </section>';
 
-//5.Цыклы
-// var el=document.getElementsByTagName('body');
-//
-// console.log(el);
-// for(var i=2; i<=10; i++){
-//     var elCreate =document.createElement('p');
-//     elCreate.textContent=i;
-//     el[0].appendChild(elCreate);
-// }
-// 6.Цыклы
+var fun419 = function fun419() {
+    elWin.innerHTML = '<article class="buttonConteiner" id="buttonConteiner">\n        <a href="#" class="button_src"><button class="buttonConteiner__button" id="buttonConteiner__button">\u041E\u0431\u0440\u0430\u0442\u043D\u044B\u0439 \u0437\u0432\u043E\u043D\u043E\u043A</button></a>\n    </article>\n    <section class="formOnOff">\n    <article class="conteiner_form" id="conteiner_form">\n\n        <form action="index1.html" class="conteiner_form__form"><label for="phone" class="conteiner_form__input">\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0442\u0435\u043B\u0435\u0444\u043E\u043D \u0438 \u043D\u0430\u0436\u043C\u0438\u0442\u0435 \u041E\u041A</label><input type="text" id="phone" class="conteiner_form__input">\n            <input type="submit" value="OK!">\n        </form>\n    </article>\n    </section>';
 
-// function simple(min,max) {
-//
-//     var sim=[];
-//     out: for ( min; min <= max; min++) {
-//
-//             for (devision = 2; devision < min; devision++) {
-//                 if (min % devision == 0)
-//                 {
-//                     continue out;
-//                 }
-//             }
-//             sim.push(min);
-//             // alert( i ); // простое
-//         }
-//
-//     return sim;
-// }
-// console.log(simple(2,10));
+    var button, educationOnOff, phone;
+    button = document.querySelector('#buttonConteiner__button');
+    educationOnOff = document.querySelector('.formOnOff');
+    phone = document.querySelector('#phone');
+    button.addEventListener('click', function (e) {
 
-// 7.Цыклы
-// var el=document.getElementsByTagName('label');
-// // el[0].textContent='test';
-// // console.log(el[0]);
-// function isSipmle(num) {
-//     text=`Число ${num} является простым`;
-//    out: for (num, i=2; i<num; i++){
-//        if(num%i==0) text=`Число ${num} является составным`;
-//         continue out;
-//    }
-//    return text;
-// }
-// console.log(isSipmle(9951));
-// console.log(isSipmle(21))
+        educationOnOff.style.display = 'inline';
+    });
+    educationOnOff.addEventListener('submit', function (e) {
 
-// 8. (объекты)
-// Создайте объект пользователя со свойствами age, isAdmin и методом grant.
-//     Вызов метода grant должен проверять возраст и:
-//     - если он больше 18, переключать isAdmin в true
-// - если он меньше 18, переключать isAdmin в false
+        e.preventDefault();
 
-// function User (age) {
-//
-//
-//     this.age= age;
-//     this.isAdmin= false;
-//     this.grant = () => (this.age>18)?(this.isAdmin = true):(this.isAdmin = false);
-//
-// }
-//
-// var us=new User(19);
-// console.log(us);
-// us.grant();
-// console.log(us);
+        if (phone.value == 0) {
+            alert('Вы не ввели телефонный номер!');
+        } else {
+            alert(phone.value);
+            phone.value = '';
+            educationOnOff.style.display = 'none';
+        }
+    });
+    educationOnOff.firstElementChild.addEventListener('click', function (e) {
+        ;
+        if (e.target.tagName == 'ARTICLE') {
+            educationOnOff.style.display = 'none';
+        }
+    });
+};
 
-// 9. (цепные вызовы)
-// Напишите цепочку вызовов, которая превращает одну строку в другую:
-//     "Some time ago I was here" --> "Yesterday I was here and there"
-// "10, 20, 30, 40" --> "10; 20; 30; 40"
+TextWindows[419] = new Dz(html419, js419, win419, fun419);
 
-// var stringEl='Some time ago I was here';
-// replaceStringEl=stringEl.replace('Some time ago','Yesterday').concat(' and there');
-// console.log(replaceStringEl);
+///////////////////// beginning of events
 
-// 10. (массивы)
-// Создайте массив, сделайте его копию и отсортируйте копию.
-//     var nums, nums2;
-// nums = [6, 4, 9, 3, 4, 2];
-// // ваш код
-// console.log(nums);  // [6, 4, 9, 3, 5, 2]
-// console.log(nums2); // [2, 3, 4, 5, 6, 9]
+el.addEventListener('click', function (e) {
 
-// var nums = [6, 4, 9, 3, 4, 2];
-// nums.splice(4,1,5);
-// console.log(nums);
-// console.log(nums.sort((a,b)=>a-b));
-
-// 11. (функции/строки)
-// function addClass(string, add){
-//
-//     var stringEl=string.split(' ');
-//     if(string.split(' ').some(function (value) {
-//         return value==add;
-//
-//     })){}
-//     else{
-//         stringEl.push(add);
-//     }
-//     string=stringEl.join(' ');
-//     return string;
-// }
-//
-// function removeClass(string, add){
-// var stringEl=string.split(' ').filter(function (value) {
-//
-//
-//         return  value!=add;
-//     });
-//     string=stringEl.join(' ');
-//     return string;
-//
-// }
-// function toggleClass(string,add){
-//     var stringEl=string.split(' ').filter(function (value) {
-//
-//
-//         return  value!=add;
-//     });
-//
-//     if(stringEl.length==string.split(' ').length) stringEl.push(add);
-//     string=stringEl.join(' ');
-//     return string;
-// }
-//
-// var str = "menu top green";
-//
-// str = addClass(str, 'new');
-// str = addClass(str, 'top');
-// str = addClass(str, 'me');
-// //
-// console.log(str); // "menu top green new me"
-// //
-// str = removeClass(str, 'to');
-// str = removeClass(str, 'new');
-// console.log(str);
-// str = toggleClass(str, 'green');
-// str = toggleClass(str, 'red');
-//
-// console.log(str); // "menu top me red"
-
-
-// 12. (функции/строки)
-// function toCamelCase(string){
-// var nam,i=0,replaceString;//инициализация переменых
-//
-//         while (true){//начинаем цыкл без условия
-//             num=string.indexOf('-',i);// если дефис есть выдас индекс его, если нет -1
-//             if(num==-1) break;
-//             replaceString=string.split('');
-//             i=num+1;
-//            replaceString.splice(num,2,replaceString[i].toUpperCase());//удаляем и заменяем верхним регистром
-//            string=replaceString.join('');
-//         }
-//
-// return string;
-// }
-//
-//
-// console.log(toCamelCase("background-color")); // 'backgroundColor';
-// console.log(toCamelCase("list-style-image")); // 'listStyleImage';
-// console.log(toCamelCase("-webkit-transition")); // 'WebkitTransition';
-//
-// 13. (объекты/массивы)
-// var names, total, sorted;
-// var users = [
-//     {name: "Alex", cash: 43},
-//     {name: "John", cash: 274},
-//     {name: "Carl", cash: 82},
-//     {name: "Bill", cash: 14}
-// ];
-//
-// /* some magic */
-//
-//
-// names = (function (object) {
-//     var ob = new Array();
-//     for (var key in object) {
-//         ob.push(object[key].name);
-//     }
-//     return ob;
-// })(users);
-//
-// total = (function (object) {
-//     var ob = 0;
-//     for (var key in object) {
-//         ob += object[key].cash;
-//     }
-//     return ob;
-// })(users);
-//
-// sorted = (function (object) {
-//     var usersClon = [];
-//     for (var key in object) {
-//         usersClon[key] = object[key];
-//     }
-//
-//    return usersClon.sort((a, b) => a.cash - b.cash);
-//
-// })(users);
-//
-//
-// console.log(names); // ["Alex", "John", "Carl", "Bill"]
-// console.log(total); // 413
-// console.log(sorted); // [{name:"Bill",cash:14},{name:"Alex",cash:43},{name:"Carl",cash:82},{name:"John",cash:274}]
-// console.log(users); // [{name:"Alex",cash:43},{name:"John",cash:274},{name:"Carl",cash:82},{name:"Bill",cash:14}]
-
-// 14. (Math)
-// Напишите функцию getRandom, которая принимает параметры min и max.
-//     Функция должна возвращать случайное целое число от min до max.
-// function getRandom(min, max) {
-//     return Math.floor(Math.random() * ((max+1) - min)) + min;
-// }
-// console.log(getRandom(2,17));
-
-// 15. (parseInt)
-// Сделать функцию для конвертирования цвета,
-//     которая принимает цвет в формате хекс и возвращает масив из 3 значений.
-//     function hexToRGB("#ff00FF"); // [255, 0, 255]
-// function hexToRGB("#ff00447733"); // null
-// Можно сделать функцию и для обратной конвертации.
-
-//
-// function hexToRgb(color) {
-//     color = color.replace('#', '').split('');
-//     var colorArray = [], colorRgb;
-//
-//     if (color.length == 3) {
-//         for (var i = 0; i < color.length; i++) {
-//             colorArray.push(parseInt(color[i], 16));
-//         }
-//         return colorArray;
-//     }
-//     else if (color.length == 6) {
-//
-//         for (var i = 0; i < color.length; i++) {
-//             colorArray.push(parseInt(color[i] + color[i + 1], 16));
-//             ++i;
-//         }
-//
-//         return colorArray;
-//     }
-//     else {
-//         return 'Вы ввели некорректное значение!';
-//     }
-// }
-//
-// console.log(hexToRgb("#ff00FF"));
-// console.log(hexToRgb("#ff00447733"));
-// console.log(hexToRgb("#ed4c4c"));
-
-// 16. (events/DOM)
-// Сделать кнопку. По клику на эту кнопку менять текст кнопки (btn.innerText) так,
-//     чтоб на кнопке было написано количество кликов.
-//     То есть, кнопка будет менять свой текст так:
-//     Начальный текст: "Кнопка"
-// Кликнули один раз: "Кликов: 1"
-// Кликнули второй раз: "Кликов: 2"
-// И так далее...
-//
-// var button = document.querySelector('.button');
-//
-// var clickButton = function () {
-//     var count = 0;
-//     return function () {
-//         return count += 1;
-//     }
-//
-// }
-// var count = clickButton();
-//
-// if (button.addEventListener) {
-//     button.addEventListener('click', function (e) {
-//         e.target.textContent = `Кликов: ${count()}`;
-//     });
-// } else {
-//     button.attachEvent('onclick', function(e) {
-//         e.srcElement.textContent = `Кликов: ${count()}`;
-//     });
-// }
-
-// 17. (events/scroll)
-// Сделать страницу текста, например такую:
-//     ((h2>lorem5)+((p>lorem100)*4)+button>lorem1)*5
-//
-// Самая нижняя кнопка должна плавно скролить в самый верх страницы.
-//     Остальные кнопки должны скролить к заголовку, который за кнопкой.
-//     Для плавного скрола понадобится setInterval.
-//     Изменить позицию скрола - window.scrollTo(x, y).
-//     window.scrollX и window.scrollY хранят текущую позицию.
-//     Находить элементы на странице мы научились в уроке.
-//     Взять позицию элемента относительно страницы можно так:
-//     el.getBoundingClientRect()
-//
-//
-// 18. (events)
-// Сделать форму, в которой будет чекбокс "У меня есть образование".
-//     Когда он включается, то должно появлять поле для ввода образование.
-//     Когда он выключается, то это поле должно прятаться.
-//     Значение чекбокса проверяется через el.checked
-//
-// var textEducation, educationOnOff;
-// educationOnOff=document.querySelector('#educationOnOff');
-// textEducation=document.querySelector('#textEducation');
-// educationOnOff.addEventListener('change', function (e){
-//
-//     console
-//     if(e.target.checked){
-//         textEducation.style.display='inline';
-//         textEducation.value='';
-//
-//     }
-//     else{
-//         textEducation.style.display='none';
-//     }
-// } );
-//
-// 19. (events)
-// Сделать какой-то header с кнопкой "Обратный звонок".
-//     По нажатию на кнопку должен появляться выпадающий блок,
-//     в котором будет поле для ввода телефона и кнопка "Да!".
-//     По нажатию но кнопку проверяем значение поля (el.value)
-// Если оно пустое, то ничего не делаем.
-//     Если оно не пустое, то выводим значение в консоль и прячем блок.
-//     Клик за пределами блока должен прятать блок.
-
-var button, educationOnOff, phone;
-button = document.querySelector('#buttonConteiner__button');
-educationOnOff = document.querySelector('.formOnOff');
-phone = document.querySelector('#phone');
-button.addEventListener('click', function (e) {
-
-    educationOnOff.style.display = 'inline';
-});
-educationOnOff.addEventListener('submit', function (e) {
-
-    e.preventDefault();
-
-    console.log(phone.value);
-    if (phone.value == 0) {
-        alert('Вы не ввели телефонный номер!');
-    } else {
-        alert(phone.value);
-        phone.value = '';
-        educationOnOff.style.display = 'none';
-    }
-});
-educationOnOff.firstElementChild.addEventListener('click', function (e) {
-    // console.log(e.target.tagName);
-    if (e.target.tagName == 'ARTICLE') {
-        educationOnOff.style.display = 'none';
+    if (e.target.getAttribute('class') == 'menu__third-level finish') {
+        var numberEl = e.target.parentElement.parentElement.parentElement.firstElementChild.dataset.number;
+        var numberEl2 = e.target.dataset.number;
+        elJs.innerHTML = TextWindows[numberEl + numberEl2].jsBr;
+        elHtml.textContent = TextWindows[numberEl + numberEl2].html;
+        elTask.innerHTML = TextWindows[numberEl + numberEl2].win;
+        TextWindows[numberEl + numberEl2].fun();
     }
 });
 
-//var inputForm= function () {
-//   var form, article, section, label, inputPhone, inputButton;
-console.log('Hello World');
+menuFirstLevel.addEventListener('mouseover', function () {
+    elJs.innerHTML = jsText;
+    elHtml.innerHTML = htmlText;
+    elTask.textContent = winTask;
+    elWin.innerHTML = winText;
+    console.clear();
+});
+
+///////////////////// end of events
