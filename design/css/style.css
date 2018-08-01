@@ -603,3 +603,28 @@ footer {
 
 .formOnOff {
   display: none; }
+
+.ajax {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 200px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+  .ajax__text, .ajax__search {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0px 10px;
+    width: 100%;
+    border: 1px solid #0f0f0f;
+    padding: 5px;
+    min-height: 25px; }
+  .ajax__text {
+    border-top: none; }

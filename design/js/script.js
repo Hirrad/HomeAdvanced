@@ -2,17 +2,17 @@
 
 ///////////////////// Beginning of variablesBe
 
-let TextWindows = {},
-    elJs,
-    elHtml,
-    elWin,
-    el,
-    menuFirstLevel,
-    jsText,
-    htmlText,
-    winText,
-    elTask,
-    winTask;
+var TextWindows = {},
+    elJs = void 0,
+    elHtml = void 0,
+    elWin = void 0,
+    el = void 0,
+    menuFirstLevel = void 0,
+    jsText = void 0,
+    htmlText = void 0,
+    winText = void 0,
+    elTask = void 0,
+    winTask = void 0;
 
 jsText = 'Тут будет js';
 htmlText = 'Тут будет html';
@@ -45,14 +45,40 @@ function Dz(html, js, win, fun) {
 }
 
 /////////////////// End of objects
+
+
+///////////////////// beginning of events
+
+el.addEventListener('click', function (e) {
+
+    if (e.target.getAttribute('class') == 'menu__third-level finish') {
+        var numberEl = e.target.parentElement.parentElement.parentElement.firstElementChild.dataset.number;
+        var numberEl2 = e.target.dataset.number;
+        elJs.innerHTML = TextWindows[numberEl + numberEl2].jsBr;
+        elHtml.textContent = TextWindows[numberEl + numberEl2].html;
+        elTask.innerHTML = TextWindows[numberEl + numberEl2].win;
+        TextWindows[numberEl + numberEl2].fun();
+    }
+});
+
+menuFirstLevel.addEventListener('mouseover', function () {
+    elJs.innerHTML = jsText;
+    elHtml.innerHTML = htmlText;
+    elTask.textContent = winTask;
+    elWin.innerHTML = winText;
+    console.clear();
+});
+
+///////////////////// end of events
 ///// Begin 4-01
-let win401 = '1. (\u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0435)<br>\n- \u041E\u0431\u044A\u044F\u0432\u0438\u0442\u0435 \u0434\u0432\u0435 \u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0435: admin \u0438 name.<br>\n- \u0417\u0430\u043F\u0438\u0448\u0438\u0442\u0435 \u0432 name \u0441\u0442\u0440\u043E\u043A\u0443 "Harry".<br>\n- \u0421\u043A\u043E\u043F\u0438\u0440\u0443\u0439\u0442\u0435 \u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435 \u0438\u0437 name \u0432 admin.<br>\n- \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 admin (\u0434\u043E\u043B\u0436\u043D\u043E \u0432\u044B\u0432\u0435\u0441\u0442\u0438 "Harry").<br>';
+var win401 = '1. (\u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0435)<br>\n- \u041E\u0431\u044A\u044F\u0432\u0438\u0442\u0435 \u0434\u0432\u0435 \u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0435: admin \u0438 name.<br>\n- \u0417\u0430\u043F\u0438\u0448\u0438\u0442\u0435 \u0432 name \u0441\u0442\u0440\u043E\u043A\u0443 "Harry".<br>\n- \u0421\u043A\u043E\u043F\u0438\u0440\u0443\u0439\u0442\u0435 \u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435 \u0438\u0437 name \u0432 admin.<br>\n- \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 admin (\u0434\u043E\u043B\u0436\u043D\u043E \u0432\u044B\u0432\u0435\u0441\u0442\u0438 "Harry").<br>';
 
 var js401 = 'var admin, name;\nname="Harry";\nadmin=name;\nconsole.log(admin);';
 
 var html401 = '';
 
 var fun401 = function fun401() {
+    elWin.innerHTML = '';
     var admin, name;
     name = "Harry";
     admin = name;
@@ -60,7 +86,7 @@ var fun401 = function fun401() {
 };
 
 TextWindows[401] = new Dz(html401, js401, win401, fun401);
-///// End 4-01
+////// End 4-01
 
 
 // 2. (переменные)
@@ -173,9 +199,6 @@ TextWindows[403] = new Dz(html403, js403, win403, fun403);
 ///// End 403
 
 
-// 5. (циклы)
-// - При помощи цикла for выведите чётные числа от 2 до 10.
-
 ///// Begin 4-05
 var win405 = '5. (\u0446\u0438\u043A\u043B\u044B)<br>\n- \u041F\u0440\u0438 \u043F\u043E\u043C\u043E\u0449\u0438 \u0446\u0438\u043A\u043B\u0430 for \u0432\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u0447\u0451\u0442\u043D\u044B\u0435 \u0447\u0438\u0441\u043B\u0430 \u043E\u0442 2 \u0434\u043E 10.<br>';
 
@@ -195,7 +218,51 @@ var fun405 = function fun405() {
 TextWindows[405] = new Dz(html405, js405, win405, fun405);
 ///// End 4-05
 
+// 6. (циклы)
+// Натуральное число называется простым, если оно ни на что не делится, кроме себя и 1.
+// Другими словами, число n простое, если при делении на любое число от 2 до n-1 есть остаток.
+//     Создайте код, который выводит все простые числа из интервала от 2 до 10. Результат должен быть: 2,3,5,7.
+// P.S. Код также должен легко модифицироваться для любых других интервалов.
 
+///// Begin 4-06
+var win406 = '1. (\u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0435)<br>\n- \u041E\u0431\u044A\u044F\u0432\u0438\u0442\u0435 \u0434\u0432\u0435 \u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0435: admin \u0438 name.<br>\n- \u0417\u0430\u043F\u0438\u0448\u0438\u0442\u0435 \u0432 name \u0441\u0442\u0440\u043E\u043A\u0443 "Harry".<br>\n- \u0421\u043A\u043E\u043F\u0438\u0440\u0443\u0439\u0442\u0435 \u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435 \u0438\u0437 name \u0432 admin.<br>\n- \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 admin (\u0434\u043E\u043B\u0436\u043D\u043E \u0432\u044B\u0432\u0435\u0441\u0442\u0438 "Harry").<br>';
+
+var js406 = 'var admin, name;\nname="Harry";\nadmin=name;\nconsole.log(admin);';
+
+var html406 = '';
+
+var fun406 = function fun406() {
+    elWin.innerHTML = '';
+    var admin, name;
+    name = "Harry";
+    admin = name;
+    console.log(admin);
+};
+
+TextWindows[401] = new Dz(html401, js401, win401, fun401);
+////// End 4-06
+
+// function simple(min,max) {
+//
+//     var sim=[];
+//     out: for ( min; min <= max; min++) {
+//
+//             for (devision = 2; devision < min; devision++) {
+//                 if (min % devision == 0)
+//                 {
+//                     continue out;
+//                 }
+//             }
+//             sim.push(min);
+//             // alert( i ); // простое
+//         }
+//
+//     return sim;
+// }
+// console.log(simple(2,10));
+
+
+///// Begin 4-19
 var win419 = '19. (events)\n\u0421\u0434\u0435\u043B\u0430\u0442\u044C \u043A\u0430\u043A\u043E\u0439-\u0442\u043E header \u0441 \u043A\u043D\u043E\u043F\u043A\u043E\u0439 "\u041E\u0431\u0440\u0430\u0442\u043D\u044B\u0439 \u0437\u0432\u043E\u043D\u043E\u043A".\n   \u041F\u043E \u043D\u0430\u0436\u0430\u0442\u0438\u044E \u043D\u0430 \u043A\u043D\u043E\u043F\u043A\u0443 \u0434\u043E\u043B\u0436\u0435\u043D \u043F\u043E\u044F\u0432\u043B\u044F\u0442\u044C\u0441\u044F \u0432\u044B\u043F\u0430\u0434\u0430\u044E\u0449\u0438\u0439 \u0431\u043B\u043E\u043A,\n    \u0432 \u043A\u043E\u0442\u043E\u0440\u043E\u043C \u0431\u0443\u0434\u0435\u0442 \u043F\u043E\u043B\u0435 \u0434\u043B\u044F \u0432\u0432\u043E\u0434\u0430 \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0430 \u0438 \u043A\u043D\u043E\u043F\u043A\u0430 "\u0414\u0430!".\n   \u041F\u043E \u043D\u0430\u0436\u0430\u0442\u0438\u044E \u043D\u043E \u043A\u043D\u043E\u043F\u043A\u0443 \u043F\u0440\u043E\u0432\u0435\u0440\u044F\u0435\u043C \u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435 \u043F\u043E\u043B\u044F (el.value)\n \u0415\u0441\u043B\u0438 \u043E\u043D\u043E \u043F\u0443\u0441\u0442\u043E\u0435, \u0442\u043E \u043D\u0438\u0447\u0435\u0433\u043E \u043D\u0435 \u0434\u0435\u043B\u0430\u0435\u043C.\n   \u0415\u0441\u043B\u0438 \u043E\u043D\u043E \u043D\u0435 \u043F\u0443\u0441\u0442\u043E\u0435, \u0442\u043E \u0432\u044B\u0432\u043E\u0434\u0438\u043C \u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435 \u0432 \u043A\u043E\u043D\u0441\u043E\u043B\u044C \u0438 \u043F\u0440\u044F\u0447\u0435\u043C \u0431\u043B\u043E\u043A.\n   \u041A\u043B\u0438\u043A \u0437\u0430 \u043F\u0440\u0435\u0434\u0435\u043B\u0430\u043C\u0438 \u0431\u043B\u043E\u043A\u0430 \u0434\u043E\u043B\u0436\u0435\u043D \u043F\u0440\u044F\u0442\u0430\u0442\u044C \u0431\u043B\u043E\u043A.';
 
 var js419 = 'var button, educationOnOff, phone;\nbutton=document.querySelector(\'#buttonConteiner__button\');\neducationOnOff=document.querySelector(\'.formOnOff\');\nphone=document.querySelector(\'#phone\');\nbutton.addEventListener(\'click\', function (e){\n\n    educationOnOff.style.display=\'inline\';\n\n} );\neducationOnOff.addEventListener(\'submit\', function (e){\n\n    e.preventDefault();\n\n        if(phone.value==0){\n        alert(\'\u0412\u044B \u043D\u0435 \u0432\u0432\u0435\u043B\u0438 \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u043D\u044B\u0439 \u043D\u043E\u043C\u0435\u0440!\');\n    }\n    else {\n        alert(phone.value);\n        phone.value = \'\';\n        educationOnOff.style.display = \'none\';\n\n    }\n\n} );\neducationOnOff.firstElementChild.addEventListener(\'click\', function (e){\n;\n    if(e.target.tagName==\'ARTICLE\'){\n        educationOnOff.style.display=\'none\';\n    }\n\n} );';
@@ -235,26 +302,119 @@ var fun419 = function fun419() {
 
 TextWindows[419] = new Dz(html419, js419, win419, fun419);
 
-///////////////////// beginning of events
+////// End 4-19
 
-el.addEventListener('click', function (e) {
 
-    if (e.target.getAttribute('class') == 'menu__third-level finish') {
-        var numberEl = e.target.parentElement.parentElement.parentElement.firstElementChild.dataset.number;
-        var numberEl2 = e.target.dataset.number;
-        elJs.innerHTML = TextWindows[numberEl + numberEl2].jsBr;
-        elHtml.textContent = TextWindows[numberEl + numberEl2].html;
-        elTask.innerHTML = TextWindows[numberEl + numberEl2].win;
-        TextWindows[numberEl + numberEl2].fun();
+///// Begin 4-01
+var win501 = '- \u0421\u043E\u0437\u0434\u0430\u0442\u044C \u043F\u0430\u043F\u043A\u0443 css \u0441 \u043F\u0430\u0440\u043E\u0439 \u0444\u0430\u0439\u043B\u043E\u0432 \u0441\u0442\u0438\u043B\u0435\u0439<br>\n- \u0421\u043E\u0437\u0434\u0430\u0442\u044C \u0442\u0435\u043A\u0441\u0442\u043E\u0432\u044B\u0439 \u0444\u0430\u0439\u043B \u0441 \u0438\u043C\u0435\u043D\u0430\u043C\u0438 \u044D\u0442\u0438\u0445 \u0444\u0430\u0439\u043B\u043E\u0432, \u0437\u0430\u043F\u0438\u0441\u0430\u043D\u043D\u044B\u043C\u0438 \u0447\u0435\u0440\u0435\u0437 \u043F\u0440\u043E\u0431\u0435\u043B<br>\n- \u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0441\u043A\u0440\u0438\u043F\u0442 \u0434\u043B\u044F node, \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u0431\u0443\u0434\u0435\u0442:<br>\n  \u0447\u0438\u0442\u0430\u0442\u044C \u0444\u0430\u0439\u043B \u0441 \u0438\u043C\u0435\u043D\u0430\u043C\u0438,<br>\n  \u0440\u0430\u0437\u0431\u0438\u0432\u0430\u0442\u044C \u0441\u0442\u0440\u043E\u043A\u0443 \u0438\u043C\u0435\u043D \u043F\u043E \u043F\u0440\u043E\u0431\u0435\u043B\u0443 \u043D\u0430 \u043C\u0430\u0441\u0441\u0438\u0432 \u0438\u043C\u0435\u043D,<br>\n  \u0447\u0438\u0442\u0430\u0442\u044C \u0441\u0430\u043C\u0438 \u0444\u0430\u0439\u043B\u044B,<br>\n  \u0441\u043A\u043B\u0435\u0438\u0432\u0430\u0442\u044C \u0432 \u043E\u0434\u043D\u0443 \u0441\u0442\u0440\u043E\u043A\u0443,<br>\n  \u0437\u0430\u043F\u0438\u0441\u044B\u0432\u0430\u0442\u044C \u0432 \u043D\u043E\u0432\u044B\u0439 \u0444\u0430\u0439\u043B.<br>\n- \u0412\u044B\u043B\u043E\u0436\u0438\u0442\u044C \u0442\u0435\u043A\u0441\u0442 \u0441\u043A\u0440\u0438\u043F\u0442\u0430 \u043D\u0430 codepen \u0438 \u043F\u0440\u0438\u0441\u043B\u0430\u0442\u044C \u043A\u0430\u043A \u0414\u0417.<br>';
+
+var js501 = 'var fs = require(\'fs\');\n    const jsList=fs.readFileSync(\'./src/js/HomeWorkJs/05/jsList.txt\', \'utf8\');\n    var list = jsList.split(\' \').reduce(function (list, currentValue) {\n        return list + fs.readFileSync(`./src/js/HomeWorkJs/04/${currentValue}`, `utf8`)\n\n    },0);\n    fs.writeFile(\'./src/js/HomeWorkJs/05/script.txt\', list);';
+
+var html501 = '';
+
+var fun501 = function fun501() {
+    elWin.innerHTML = '';
+    var fs = require('fs');
+    var jsList = fs.readFileSync('./src/js/HomeWorkJs/05/jsList.txt', 'utf8');
+    var list = jsList.split(' ').reduce(function (list, currentValue) {
+        return list + fs.readFileSync('./src/js/HomeWorkJs/04/' + currentValue, 'utf8');
+    }, 0);
+    fs.writeFile('./src/js/HomeWorkJs/05/script.txt', list);
+};
+
+TextWindows[501] = new Dz(html501, js501, win501, fun501);
+////// End 4-01
+
+
+///// Begin 6-01
+var win601 = '\u0421\u0434\u0435\u043B\u0430\u0442\u044C \u043F\u043E\u043B\u0435 \u0432\u0432\u043E\u0434\u0430 \u0438 \u043F\u043E\u0434\u043F\u0438\u0441\u0430\u0442\u044C \u043D\u0430 \u0441\u043E\u0431\u044B\u0442\u0438\u0435 keydown, \u043F\u043E \u043A\u043E\u0442\u043E\u0440\u043E\u043C\u0443 \u043D\u0443\u0436\u043D\u043E \u0431\u0440\u0430\u0442\u044C \u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435 \u043F\u043E\u043B\u044F (\u043D\u0430\u043F\u0435\u0447\u0430\u0442\u0430\u043D\u043D\u044B\u0439 \u0442\u0435\u043A\u0441\u0442) \u0438 \u043E\u0442\u043F\u0440\u0430\u0432\u043B\u044F\u0442\u044C \u0435\u0433\u043E \u0432 API Wiki.<br>\n\n    \u0418\u0437 \u043E\u0442\u0432\u0435\u0442\u0430 API \u043D\u0443\u0436\u043D\u043E \u0444\u043E\u0440\u043C\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0441\u043F\u0438\u0441\u043E\u043A autocomplete \u0438 \u0432\u0441\u0442\u0430\u0432\u043B\u044F\u0442\u044C \u0435\u0433\u043E \u043A\u0430\u043A \u043F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0443 \u043F\u043E\u0434 \u043F\u043E\u043B\u0435\u043C \u0432\u0432\u043E\u0434\u0430.<br>\n\n    \u0412\u044B\u0433\u043B\u044F\u0434\u0435\u0442\u044C \u0434\u043E\u043B\u0436\u043D\u043E \u0442\u0430\u043A: http://take.ms/m08P9<br>\n\n     \u041A\u043B\u0438\u043A \u043D\u0430 \u043B\u044E\u0431\u043E\u0439 \u0432\u0430\u0440\u0438\u0430\u043D\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0442\u043A\u0440\u044B\u0432\u0430\u0442\u044C \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0443 \u0432 \u043D\u043E\u0432\u043E\u0439 \u0432\u043A\u043B\u0430\u0434\u043A\u0435.<br>\n\n    \u041D\u0430\u043F\u043E\u043C\u0438\u043D\u0430\u044E, \u0447\u0442\u043E:<br>\n\n- \u0441\u043E\u0437\u0434\u0430\u0442\u044C \u044D\u043B\u0435\u043C\u0435\u043D\u0442 \u043C\u043E\u0436\u043D\u043E \u043A\u043E\u043C\u0430\u043D\u0434\u043E\u0439 var a = document.createElement(\'a\')<br>\n\n   - \u0441\u0441\u044B\u043B\u043A\u0443 \u043A \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u0443 \u043C\u043E\u0436\u043D\u043E \u0434\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u043A\u043E\u043C\u0430\u043D\u0434\u043E\u0439 a.href = "http://site.com"<br>\n\n    - \u0441\u043E\u0434\u0435\u0440\u0436\u0438\u043C\u043E\u0435 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u0443 \u043C\u043E\u0436\u043D\u043E \u0434\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u043A\u043E\u043C\u0430\u043D\u0434\u043E\u0439 a.innerHTML = "Some text"<br>\n\n  - \u0447\u0442\u043E\u0431 \u043E\u0442\u043A\u0440\u044B\u0432\u0430\u043B\u043E \u0432 \u043D\u043E\u0432\u043E\u0439 \u0432\u043A\u043B\u0430\u0434\u043A\u0435, \u0434\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u043C \u0430\u0442\u0440\u0438\u0431\u0443\u0442 a.target = "_blank"<br>\n\n    - \u0432\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u044D\u043B\u0435\u043C\u0435\u043D\u0442 \u0432 \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0443 \u043C\u043E\u0436\u043D\u043E \u043A\u043E\u043C\u0430\u043D\u0434\u043E\u0439<br>\n\ndocument.querySelector(\'.results\').appendChild(a)';
+
+var js601 = 'let conteinerAjax = document.createElement(\'div\');\nlet textPressAjax = document.createElement(\'input\');\nconteinerAjax.classList.add(\'ajax\');\ntextPressAjax.setAttribute(\'id\', \'textPressAjax\');\ntextPressAjax.classList.add(\'ajax__search\');\ntextPressAjax.setAttribute(\'value\', \'\u041F\u043E\u0438\u0441\u043A...\');\ntextPressAjax.maxLength=\'20\';\nelWin.appendChild(conteinerAjax);\nconsole.log(textPressAjax);\nconteinerAjax.appendChild(textPressAjax);\ntextPressAjax.addEventListener(\'focus\', function (e) {\n    if (e.target.value == \'\u041F\u043E\u0438\u0441\u043A...\') {\n        e.target.value = \'\';\n    }\n})\ntextPressAjax.addEventListener(\'blur\', function (e) {\n    setTimeout(remuveDom, 500);\n})\ntextPressAjax.addEventListener(\'input\', axajSearch);\nfunction search() {\n    var seachText, spanPressAjax;\n    if (conteinerAjax.childElementCount != 1) {\n        remuveDom()\n    }\n    var params = {\n        action: \'opensearch\',\n        origin: \'*\',\n        format: \'json\',\n        search: \'\'\n    };\n    params.search = textPressAjax.value;\n    var body = Object.keys(params)\n        .map(function (prop) {\n            return prop + \'=\' + params[prop];\n        })\n        .join(\'&\');\n    var apiUrl = \'https://ru.wikipedia.org/w/api.php\';\n    var http = new XMLHttpRequest();\n    http.open(\'POST\', apiUrl);\n    http.addEventListener(\'readystatechange\', function () {\n        if (this.readyState == 4) {\n            if (this.status == 200) {\n                seachText = JSON.parse(this.responseText);\n                console.log(seachText.length);\n                for (var i = 0; i < seachText[1].length && i < 10; i++) {\n                    spanPressAjax = document.createElement(\'span\');\n                    spanPressAjax.classList.add(\'ajax__text\');\n                    spanPressAjax.innerHTML = `<a href="${seachText[3][i]}" target="_blank">${seachText[1][i]}</a>`;\n                    conteinerAjax.appendChild(spanPressAjax);\n                }\n            }\n        }\n    })\n    http.send(body);\n}\nvar time;\nfunction axajSearch() {\n    time && clearTimeout(time);\n    time=setTimeout(search,500);\n}\nfunction remuveDom() {\n    while (conteinerAjax.childElementCount != 1) {\n        conteinerAjax.lastElementChild.remove()\n    }\n}';
+
+var html601 = '';
+
+var fun601 = function fun601() {
+    elWin.innerHTML = '';
+    var conteinerAjax = document.createElement('div');
+    var textPressAjax = document.createElement('input');
+
+    conteinerAjax.classList.add('ajax');
+
+    textPressAjax.setAttribute('id', 'textPressAjax');
+    textPressAjax.classList.add('ajax__search');
+    textPressAjax.setAttribute('value', 'Поиск...');
+    textPressAjax.maxLength = '20';
+    elWin.appendChild(conteinerAjax);
+
+    conteinerAjax.appendChild(textPressAjax);
+
+    textPressAjax.addEventListener('focus', function (e) {
+
+        if (e.target.value == 'Поиск...') {
+            e.target.value = '';
+        }
+    });
+
+    textPressAjax.addEventListener('blur', function (e) {
+
+        setTimeout(remuveDom, 500);
+    });
+
+    textPressAjax.addEventListener('input', axajSearch);
+
+    function search() {
+        var seachText, spanPressAjax;
+
+        if (conteinerAjax.childElementCount != 1) {
+            remuveDom();
+        }
+        var params = {
+            action: 'opensearch',
+            origin: '*',
+            format: 'json',
+            search: ''
+        };
+        params.search = textPressAjax.value;
+        var body = Object.keys(params).map(function (prop) {
+            return prop + '=' + params[prop];
+        }).join('&');
+        var apiUrl = 'https://ru.wikipedia.org/w/api.php';
+        var http = new XMLHttpRequest();
+        http.open('POST', apiUrl);
+        http.addEventListener('readystatechange', function () {
+            if (this.readyState == 4) {
+                if (this.status == 200) {
+                    // success callback
+                    seachText = JSON.parse(this.responseText);
+                    console.log(seachText.length);
+
+                    for (var i = 0; i < seachText[1].length && i < 10; i++) {
+
+                        spanPressAjax = document.createElement('span');
+                        spanPressAjax.classList.add('ajax__text');
+                        spanPressAjax.innerHTML = '<a href="' + seachText[3][i] + '" target="_blank">' + seachText[1][i] + '</a>';
+                        conteinerAjax.appendChild(spanPressAjax);
+                    }
+                }
+            }
+        });
+
+        http.send(body);
     }
-});
 
-menuFirstLevel.addEventListener('mouseover', function () {
-    elJs.innerHTML = jsText;
-    elHtml.innerHTML = htmlText;
-    elTask.textContent = winTask;
-    elWin.innerHTML = winText;
-    console.clear();
-});
+    var time;
 
-///////////////////// end of events
+    function axajSearch() {
+        time && clearTimeout(time);
+        time = setTimeout(search, 500);
+    }
+
+    function remuveDom() {
+        while (conteinerAjax.childElementCount != 1) {
+            conteinerAjax.lastElementChild.remove();
+        }
+    }
+};
+
+TextWindows[601] = new Dz(html601, js601, win601, fun601);
+////// End 6-01
