@@ -47,6 +47,9 @@ function Dz(html, js, win, fun) {
 /////////////////// End of objects
 
 
+//
+
+
 ///////////////////// beginning of events
 
 el.addEventListener('click', function (e) {
@@ -70,6 +73,9 @@ menuFirstLevel.addEventListener('mouseover', function () {
 });
 
 ///////////////////// end of events
+var log = function log(el) {
+    return console.log(el);
+};
 ///// Begin 4-01
 var win401 = '1. (\u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0435)<br>\n- \u041E\u0431\u044A\u044F\u0432\u0438\u0442\u0435 \u0434\u0432\u0435 \u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0435: admin \u0438 name.<br>\n- \u0417\u0430\u043F\u0438\u0448\u0438\u0442\u0435 \u0432 name \u0441\u0442\u0440\u043E\u043A\u0443 "Harry".<br>\n- \u0421\u043A\u043E\u043F\u0438\u0440\u0443\u0439\u0442\u0435 \u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435 \u0438\u0437 name \u0432 admin.<br>\n- \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 admin (\u0434\u043E\u043B\u0436\u043D\u043E \u0432\u044B\u0432\u0435\u0441\u0442\u0438 "Harry").<br>';
 
@@ -151,16 +157,7 @@ TextWindows[401] = new Dz(html401, js401, win401, fun401);
 // else {
 //     alert("Вы ввели данные при которых треугольник не существует! Помните, что сумма любых двоих сторон должна быть больше третей!!!")
 // }
-// // 3. (if/else)
-// //     - Объявите переменную с каким-то числом.
-// // - Используя конструкцию if..else, напишите код,
-// //     который выводит в консоль:
-// //     • 1, если значение больше нуля,
-// //   • -1, если значение меньше нуля,
-// //   • 0, если значение равно нулю.
-// //
-
-///// Begin 403
+///// Begin 4-03
 var win403 = ' - \u041E\u0431\u044A\u044F\u0432\u0438\u0442\u0435 \u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u0443\u044E \u0441 \u043A\u0430\u043A\u0438\u043C-\u0442\u043E \u0447\u0438\u0441\u043B\u043E\u043C.<br>\n - \u0418\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u044F \u043A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0446\u0438\u044E if..else, \u043D\u0430\u043F\u0438\u0448\u0438\u0442\u0435 \u043A\u043E\u0434,<br>\n    \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u0432\u044B\u0432\u043E\u0434\u0438\u0442 \u0432 \u043A\u043E\u043D\u0441\u043E\u043B\u044C:<br>\n    \u2022 1, \u0435\u0441\u043B\u0438 \u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435 \u0431\u043E\u043B\u044C\u0448\u0435 \u043D\u0443\u043B\u044F,<br>\n   \u2022 -1, \u0435\u0441\u043B\u0438 \u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435 \u043C\u0435\u043D\u044C\u0448\u0435 \u043D\u0443\u043B\u044F,<br>\n   \u2022 0, \u0435\u0441\u043B\u0438 \u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435 \u0440\u0430\u0432\u043D\u043E \u043D\u0443\u043B\u044E.';
 
 var js403 = 'var textNumber=document.getElementById(\'textNumber\');\nvar textNumberPrevious= textNumber.previousElementSibling;\ntextNumberPrevious.textContent=\'\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0447\u0438\u0441\u043B\u043E \u0438 \u043D\u0430\u0436\u043C\u0438\u0442\u0435 Enter\';\nvar elDiv=document.createElement(\'b\');\n\n\n\ndocument.body.insertBefore(elDiv, textNumber );\nconsole.log(textNumberPrevious);\n\n\n\n\n\ntextNumber.addEventListener(\'keypress\', function(e){\n    var text = this.previousElementSibling;\n\n\n    if(isNaN(this.value)&&e.keyCode==\'13\'){\n        text.textContent=\'\u0412\u044B \u0432\u0432\u0435\u043B\u0438 \u043D\u0435 \u0447\u0438\u0441\u043B\u043E! \u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0447\u0438\u0441\u043B\u043E!\';\n    }\n    else if(this.value && e.keyCode==\'13\'){\n\n        switch(true) {\n            case(this.value > 0)  :   text.textContent = "\u041F\u043E\u043B\u043E\u0436\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0435"; break;\n            case(this.value < 0)  :   text.textContent = "\u041E\u0442\u0440\u0438\u0446\u0430\u0442\u0435\u043B\u044C\u043D\u043E\u0435"; break;\n            case(this.value == 0) :   text.textContent= "\u0420\u0430\u0432\u043D\u043E \u043D\u0443\u043B\u044E";\n        }\n    }\n\n});';
@@ -196,7 +193,7 @@ var fun403 = function fun403() {
 };
 
 TextWindows[403] = new Dz(html403, js403, win403, fun403);
-///// End 403
+///// End 4-03
 
 
 ///// Begin 4-05
@@ -305,7 +302,7 @@ TextWindows[419] = new Dz(html419, js419, win419, fun419);
 ////// End 4-19
 
 
-///// Begin 4-01
+///// Begin 5-01
 var win501 = '- \u0421\u043E\u0437\u0434\u0430\u0442\u044C \u043F\u0430\u043F\u043A\u0443 css \u0441 \u043F\u0430\u0440\u043E\u0439 \u0444\u0430\u0439\u043B\u043E\u0432 \u0441\u0442\u0438\u043B\u0435\u0439<br>\n- \u0421\u043E\u0437\u0434\u0430\u0442\u044C \u0442\u0435\u043A\u0441\u0442\u043E\u0432\u044B\u0439 \u0444\u0430\u0439\u043B \u0441 \u0438\u043C\u0435\u043D\u0430\u043C\u0438 \u044D\u0442\u0438\u0445 \u0444\u0430\u0439\u043B\u043E\u0432, \u0437\u0430\u043F\u0438\u0441\u0430\u043D\u043D\u044B\u043C\u0438 \u0447\u0435\u0440\u0435\u0437 \u043F\u0440\u043E\u0431\u0435\u043B<br>\n- \u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0441\u043A\u0440\u0438\u043F\u0442 \u0434\u043B\u044F node, \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u0431\u0443\u0434\u0435\u0442:<br>\n  \u0447\u0438\u0442\u0430\u0442\u044C \u0444\u0430\u0439\u043B \u0441 \u0438\u043C\u0435\u043D\u0430\u043C\u0438,<br>\n  \u0440\u0430\u0437\u0431\u0438\u0432\u0430\u0442\u044C \u0441\u0442\u0440\u043E\u043A\u0443 \u0438\u043C\u0435\u043D \u043F\u043E \u043F\u0440\u043E\u0431\u0435\u043B\u0443 \u043D\u0430 \u043C\u0430\u0441\u0441\u0438\u0432 \u0438\u043C\u0435\u043D,<br>\n  \u0447\u0438\u0442\u0430\u0442\u044C \u0441\u0430\u043C\u0438 \u0444\u0430\u0439\u043B\u044B,<br>\n  \u0441\u043A\u043B\u0435\u0438\u0432\u0430\u0442\u044C \u0432 \u043E\u0434\u043D\u0443 \u0441\u0442\u0440\u043E\u043A\u0443,<br>\n  \u0437\u0430\u043F\u0438\u0441\u044B\u0432\u0430\u0442\u044C \u0432 \u043D\u043E\u0432\u044B\u0439 \u0444\u0430\u0439\u043B.<br>\n- \u0412\u044B\u043B\u043E\u0436\u0438\u0442\u044C \u0442\u0435\u043A\u0441\u0442 \u0441\u043A\u0440\u0438\u043F\u0442\u0430 \u043D\u0430 codepen \u0438 \u043F\u0440\u0438\u0441\u043B\u0430\u0442\u044C \u043A\u0430\u043A \u0414\u0417.<br>';
 
 var js501 = 'var fs = require(\'fs\');\n    const jsList=fs.readFileSync(\'./src/js/HomeWorkJs/05/jsList.txt\', \'utf8\');\n    var list = jsList.split(\' \').reduce(function (list, currentValue) {\n        return list + fs.readFileSync(`./src/js/HomeWorkJs/04/${currentValue}`, `utf8`)\n\n    },0);\n    fs.writeFile(\'./src/js/HomeWorkJs/05/script.txt\', list);';
@@ -313,17 +310,11 @@ var js501 = 'var fs = require(\'fs\');\n    const jsList=fs.readFileSync(\'./src
 var html501 = '';
 
 var fun501 = function fun501() {
-    elWin.innerHTML = '';
-    var fs = require('fs');
-    var jsList = fs.readFileSync('./src/js/HomeWorkJs/05/jsList.txt', 'utf8');
-    var list = jsList.split(' ').reduce(function (list, currentValue) {
-        return list + fs.readFileSync('./src/js/HomeWorkJs/04/' + currentValue, 'utf8');
-    }, 0);
-    fs.writeFile('./src/js/HomeWorkJs/05/script.txt', list);
+    elWin.innerHTML = 'var fs = require(\'fs\');\n' + '    const jsList=fs.readFileSync(\'./src/js/HomeWorkJs/05/jsList.txt\', \'utf8\');\n' + '    var list = jsList.split(\' \').reduce(function (list, currentValue) {\n' + '        return list + fs.readFileSync(`./src/js/HomeWorkJs/04/\${currentValue}`, `utf8`)\n' + '\n' + '    },0);\n' + '    fs.writeFile(\'./src/js/HomeWorkJs/05/script.txt\', list);';
 };
 
 TextWindows[501] = new Dz(html501, js501, win501, fun501);
-////// End 4-01
+////// End 5-01
 
 
 ///// Begin 6-01
@@ -418,3 +409,174 @@ var fun601 = function fun601() {
 
 TextWindows[601] = new Dz(html601, js601, win601, fun601);
 ////// End 6-01
+
+
+///// Begin 7-01
+
+// var elSelect=document.querySelectorAll('.conteinerSelect'); //первый вариант
+// // var elSelect=document.querySelectorAll('.upDown');
+// // log(elSelect);
+// var submit=document.querySelector('#formFruits');
+// // console.log(submit);
+// var i=0;
+// while(elSelect[i]){
+//     // log(elSelect[i]);
+//     elSelect[i].addEventListener('click',function (e) {
+//
+//
+//         if(e.target.classList.contains('up')||e.target.classList.contains('down'))
+//         {
+//             var first, last, next;
+//
+//
+//             first = e.target.parentNode.previousElementSibling.firstElementChild;
+//             // log(e.target.parentNode.previousElementSibling);
+//             last = e.target.parentNode.previousElementSibling.lastElementChild;
+//             // log(last);
+//             next = first.nextElementSibling;
+//
+//
+//
+//             if (e.target.classList.contains('up')) {
+//                 first.removeAttribute('selected', '');
+//                 e.target.parentNode.previousElementSibling.insertBefore(last, first);
+//
+//                 last.setAttribute('selected', '');
+//
+//             }
+//             if (e.target.classList.contains('down')) {
+//                 first.removeAttribute('selected', '');
+//                 e.target.parentNode.previousElementSibling.appendChild(first);
+//                 next.setAttribute('selected', '');
+//
+//             }
+//
+//         }
+//     });
+// i++;
+// }
+//
+// submit.addEventListener('submit',function (e) {
+//     var form=document.querySelectorAll('select');
+//     var i=0;
+//     while(form[i]){
+//         // console.log(form[i].value);
+//         // console.log(form[i].getAttribute('name'));
+//         localStorage.setItem(`${form[i].getAttribute('name')}`, `${form[i].value}`);
+//         i++;
+//     }
+//     // console.log(form[1].form[i].value);
+//     // var formData = new FormData(document.getElementById('formFruits'));
+//     // console.log(e.target);
+//     e.preventDefault();
+//     alert('Ваш выбор сохранен!')
+//     // console.log(formData);
+//
+// })
+// ;(function (element){
+//     var i=0,j=0,name, value, select;
+//     var el=document.querySelectorAll(element);
+//     // NodeList.prototype.filter=Array.prototype.filter;
+//     HTMLCollection.prototype.filter=Array.prototype.filter;
+//     // NodeList.prototype.filter=Array.prototype.filter;
+//     // var er=el.filter(function (el){return el.getAttribute('name')=='harry'});
+//     // log(er);
+//     // console.log(el);
+//     // log(el);
+//     for(;i<el.length;i++){
+//         name=el[i].getAttribute('name');
+//         // log(name);
+//         value=localStorage.getItem(name);
+//         // log(value);
+//         select=el[i].children.filter(function (el){return el.getAttribute('value')==value})
+//         select[0].setAttribute('selected','');
+//     }
+//
+//     // console.log(el[0].getAttribute('id'));
+//     // while(localStorage.getItem(`${el[i].getAttribute('name')}`)){
+//     //     el.firstElementChild.setAttribute('selected','');
+//     // }
+// })('.selectFormFruits');
+
+
+var win701 = '\u0421\u0434\u0435\u043B\u0430\u0442\u044C \u0444\u043E\u0440\u043C\u0443 \u0441 \u0441\u0435\u043B\u0435\u043A\u0442\u0430\u043C\u0438 (\u043D\u0430\u043F\u0440\u0438\u043C\u0435\u0440, \u0442\u0430\u043A\u0443\u044E http://take.ms/OLk4v).<br>\n \u041F\u0440\u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0438 \u0444\u043E\u0440\u043C\u044B \u0434\u0430\u043D\u043D\u044B\u0435 \u0434\u043E\u043B\u0436\u043D\u044B \u0437\u0430\u043F\u0438\u0441\u044B\u0432\u0430\u0442\u044C\u0441\u044F \u0432 localStorage.<br>\n  \u0424\u043E\u0440\u043C\u0430 \u043E\u0442\u043F\u0440\u0430\u0432\u043B\u044F\u0442\u044C\u0441\u044F \u043D\u0435 \u0434\u043E\u043B\u0436\u043D\u0430.<br>\n \u041F\u043E\u0441\u043B\u0435 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u044F \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u044B \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0434\u043E\u043B\u0436\u043D\u044B \u0431\u044B\u0442\u044C \u0432\u044B\u0431\u0440\u0430\u043D\u044B \u0442\u0435, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u0441\u043E\u0445\u0440\u0430\u043D\u044F\u043B\u0438\u0441\u044C.<br>';
+
+var js701 = 'var elSelect=document.querySelectorAll(\'.conteinerSelect\'); //первый вариант\n' + '    var submit=document.querySelector(\'#formFruits\');\n' + '    var i=0;\n' + '    while(elSelect[i]){\n' + '        elSelect[i].addEventListener(\'click\',function (e) {\n' + '            if(e.target.classList.contains(\'up\')||e.target.classList.contains(\'down\'))\n' + '            {\n' + '                var first, last, next;\n' + '                first = e.target.parentNode.previousElementSibling.firstElementChild;\n' + '                last = e.target.parentNode.previousElementSibling.lastElementChild;\n' + '                next = first.nextElementSibling;\n' + '                if (e.target.classList.contains(\'up\')) {\n' + '                    first.removeAttribute(\'selected\', \'\');\n' + '                    e.target.parentNode.previousElementSibling.insertBefore(last, first);\n' + '                    last.setAttribute(\'selected\', \'\');\n' + '                }\n' + '                if (e.target.classList.contains(\'down\')) {\n' + '                    first.removeAttribute(\'selected\', \'\');\n' + '                    e.target.parentNode.previousElementSibling.appendChild(first);\n' + '                    next.setAttribute(\'selected\', \'\');\n' + '                }\n' + '            }\n' + '        });\n' + '        i++;\n' + '    }\n' + '    submit.addEventListener(\'submit\',function (e) {\n' + '        var form=document.querySelectorAll(\'select\');\n' + '        var i=0;\n' + '        while(form[i]){\n' + '            localStorage.setItem(`${form[i].getAttribute(\'name\')}`, `${form[i].value}`);\n' + '            i++;\n' + '        }\n' + '        e.preventDefault();\n' + '        alert(\'Ваш выбор сохранен!\')\n' + '    })\n' + '    ;(function (element){\n' + '        var i=0,j=0,name, value, select;\n' + '        var el=document.querySelectorAll(element);\n' + '        HTMLCollection.prototype.filter=Array.prototype.filter;\n' + '        for(;i<el.length;i++){\n' + '            name=el[i].getAttribute(\'name\');\n' + '            value=localStorage.getItem(name);\n' + '            select=el[i].children.filter(function (el){return el.getAttribute(\'value\')==value})\n' + '            select[0].setAttribute(\'selected\',\'\');\n' + '        }\n' + '    })(\'.selectFormFruits\');';
+
+var html701 = '<div class="selectEvent">\n' + '        <article class="conteinerSelect">\n' + '            <label for="andy">Andy</label>\n' + '            <select name="andy" id="andy" form="formFruits" class="selectFormFruits">\n' + '                <option value="apple">Apple</option>\n' + '                <option value="orange">Orange</option>\n' + '                <option value="carrot">Carrot</option>\n' + '                <option value="cherry">Cherry</option>\n' + '            </select>\n' + '            <div class="upDown"><figure class="up" ></figure><figure class="down"></figure></div>\n' + '        </article>\n' + '        <article class="conteinerSelect">\n' + '            <label for="harry">Harry</label>\n' + '            <select name="harry" id="harry" form="formFruits" class="selectFormFruits" >\n' + '                <option value="apple">Apple</option>\n' + '                <option value="orange">Orange</option>\n' + '                <option value="carrot">Carrot</option>\n' + '                <option value="cherry">Cherry</option>\n' + '            </select>\n' + '            <div class="upDown"><figure class="up" ></figure><figure class="down"></figure></div>\n' + '        </article>\n' + '        </div>\n' + '        <form id="formFruits" >\n' + '            <input type="submit" value="Save">\n' + '        </form>';
+
+var fun701 = function fun701() {
+    elWin.innerHTML = html701;
+    var elSelect = document.querySelectorAll('.conteinerSelect'); //первый вариант
+    var submit = document.querySelector('#formFruits');
+    var i = 0;
+    while (elSelect[i]) {
+        elSelect[i].addEventListener('click', function (e) {
+            if (e.target.classList.contains('up') || e.target.classList.contains('down')) {
+                var first, last, next;
+                first = e.target.parentNode.previousElementSibling.firstElementChild;
+                last = e.target.parentNode.previousElementSibling.lastElementChild;
+                next = first.nextElementSibling;
+                if (e.target.classList.contains('up')) {
+                    first.removeAttribute('selected', '');
+                    e.target.parentNode.previousElementSibling.insertBefore(last, first);
+                    last.setAttribute('selected', '');
+                }
+                if (e.target.classList.contains('down')) {
+                    first.removeAttribute('selected', '');
+                    e.target.parentNode.previousElementSibling.appendChild(first);
+                    next.setAttribute('selected', '');
+                }
+            }
+        });
+        i++;
+    }
+    submit.addEventListener('submit', function (e) {
+        var form = document.querySelectorAll('select');
+        var i = 0;
+        while (form[i]) {
+            localStorage.setItem('' + form[i].getAttribute('name'), '' + form[i].value);
+            i++;
+        }
+        e.preventDefault();
+        alert('Ваш выбор сохранен!');
+    });(function (element) {
+        var i = 0,
+            j = 0,
+            name,
+            value,
+            select;
+        var el = document.querySelectorAll(element);
+        HTMLCollection.prototype.filter = Array.prototype.filter;
+        for (; i < el.length; i++) {
+            name = el[i].getAttribute('name');
+            value = localStorage.getItem(name);
+            select = el[i].children.filter(function (el) {
+                return el.getAttribute('value') == value;
+            });
+            select[0].setAttribute('selected', '');
+        }
+    })('.selectFormFruits');
+};
+
+TextWindows[701] = new Dz(html701, js701, win701, fun701);
+////// End 7-01
+
+
+// Домашнее задание:
+//     1.
+// Сделать форму с селектами (например, такую http://take.ms/OLk4v).
+//     При сохранении формы данные должны записываться в localStorage.
+//     Форма отправляться не должна.
+//     После обновления страницы элементы должны быть выбраны те, которые сохранялись.
+//
+// 2.
+// Сделать функцию (используя Promise), которая откладывает выполнение.
+//     function delay(ms){ /* ваш код тут */ }
+// function doStuff() { console.log("Я появлюсь через 2 секунды"); }
+// delay(2000).then(doStuff);
+// Если в delay не передалось число, то делаем свою ошибку, например "Please specify duration".
+//     Если в delay передалось не число, то делаем свою ошибку, например "Duration is required to be a number".
+//
+// 3.
+// Переписать поиск по wiki, используя Promise.
