@@ -563,20 +563,126 @@ TextWindows[701] = new Dz(html701, js701, win701, fun701);
 ////// End 7-01
 
 
-// Домашнее задание:
-//     1.
-// Сделать форму с селектами (например, такую http://take.ms/OLk4v).
-//     При сохранении формы данные должны записываться в localStorage.
-//     Форма отправляться не должна.
-//     После обновления страницы элементы должны быть выбраны те, которые сохранялись.
-//
-// 2.
-// Сделать функцию (используя Promise), которая откладывает выполнение.
-//     function delay(ms){ /* ваш код тут */ }
-// function doStuff() { console.log("Я появлюсь через 2 секунды"); }
-// delay(2000).then(doStuff);
-// Если в delay не передалось число, то делаем свою ошибку, например "Please specify duration".
-//     Если в delay передалось не число, то делаем свою ошибку, например "Duration is required to be a number".
+///// Begin 7-02
+var win702 = '\u0421\u0434\u0435\u043B\u0430\u0442\u044C \u0444\u0443\u043D\u043A\u0446\u0438\u044E (\u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u044F Promise), \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u043E\u0442\u043A\u043B\u0430\u0434\u044B\u0432\u0430\u0435\u0442 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u0438\u0435.<br>\nfunction delay(ms){ /* \u0432\u0430\u0448 \u043A\u043E\u0434 \u0442\u0443\u0442 */ }<br>\nfunction doStuff() { console.log(\'\u0410 \u0432\u043E\u0442 \u0438 \u044F!\'); }<br>\ndelay(2000).then(doStuff);<br>\n \u0415\u0441\u043B\u0438 \u0432 delay \u043D\u0435 \u043F\u0435\u0440\u0435\u0434\u0430\u043B\u043E\u0441\u044C \u0447\u0438\u0441\u043B\u043E, \u0442\u043E \u0434\u0435\u043B\u0430\u0435\u043C \u0441\u0432\u043E\u044E \u043E\u0448\u0438\u0431\u043A\u0443, \u043D\u0430\u043Fs\u0440\u0438\u043C\u0435\u0440 "Please specify duration".<br>\n \u0415\u0441\u043B\u0438 \u0432 delay \u043F\u0435\u0440\u0435\u0434\u0430\u043B\u043E\u0441\u044C \u043D\u0435 \u0447\u0438\u0441\u043B\u043E, \u0442\u043E \u0434\u0435\u043B\u0430\u0435\u043C \u0441\u0432\u043E\u044E \u043E\u0448\u0438\u0431\u043A\u0443, \u043D\u0430\u043F\u0440\u0438\u043C\u0435\u0440 "Duration is required to be a number".<br>';
+
+var js702 = 'var log;\nelWin.innerHTML=\'html702\';\nlog(document.querySelectorAll(\'.promis\')[0]);\nfunction doStuff() { document.querySelectorAll(\'.promis\')[1].textContent=\'<\'img \'src=\'https://i.gifer.com/4dlj.gif\'>\' }\nvar delay=function (ms) {\n    ms&&( document.querySelectorAll(\'.promis\')[0].textContent=\'\u042F \u043F\u043E\u044F\u0432\u043B\u044E\u0441\u044C \u0447\u0435\u0440\u0435\u0437 \'+(ms/1000)+\' \u0441\u0435\u043A\u0443\u043D\u0434\u044B\');\n    if(typeof ms==\'number\'){\n    }\n    var tr= new Promise(function (resolve, reject) {\n        if(typeof ms==\'number\'){\n            setTimeout( resolve, ms) ;\n        }\n        else{\n            reject(ms)\n        }\n    });\n    return tr;\n};\n\ndelay(2000).then(doStuff).catch((r)=>log(\'Please enter a valid delay. You entered: \'+r));';
+
+var html702 = '<div class="promis"></div><div class="promis"></div>';
+
+var fun702 = function fun702() {
+    var log;
+    elWin.innerHTML = html702;
+
+    function doStuff() {
+        document.querySelectorAll('.promis')[1].innerHTML = '<img src="https://i.gifer.com/4dlj.gif">';
+    }
+    var delay = function delay(ms) {
+        ms && (document.querySelectorAll('.promis')[0].textContent = 'Я появлюсь через ' + ms / 1000 + ' секунды');
+        if (typeof ms == 'number') {}
+        var tr = new Promise(function (resolve, reject) {
+            if (typeof ms == 'number') {
+                setTimeout(resolve, ms);
+            } else {
+                reject(ms);
+            }
+        });
+        return tr;
+    };
+
+    delay(4000).then(doStuff).catch(function (r) {
+        return log('Please enter a valid delay. You entered: ' + r);
+    });
+};
+
+TextWindows[702] = new Dz(html702, js702, win702, fun702);
+////// End 7-02
+
+
 //
 // 3.
 // Переписать поиск по wiki, используя Promise.
+
+///// Begin 7-03
+var win703 = '\u041F\u0435\u0440\u0435\u043F\u0438\u0441\u0430\u0442\u044C \u043F\u043E\u0438\u0441\u043A \u043F\u043E wiki, \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u044F Promise.';
+
+var js703 = 'textPressAjax.addEventListener(\'focus\', function (e) {\n    if (e.target.value == \'\u041F\u043E\u0438\u0441\u043A...\') {\n        e.target.value = \'\';\n    }\n})\ntextPressAjax.addEventListener(\'blur\', function (e) {\n    setTimeout(remuveDom, 500);\n})\n\n\nfunction search(time) {\n        var seachText, spanPressAjax;\n    if (conteinerAjax.childElementCount != 1) {\n        remuveDom()\n    }\n\n    var params = {\n        action: \'opensearch\',\n        origin: \'*\',\n        format: \'json\',\n        search: \'\'\n    };\n    params.search = textPressAjax.value;\n    var body = Object.keys(params)\n        .map(function (prop) {\n            return prop + \'=\' + params[prop];\n        })\n        .join(\'&\');\n    return new Promise(function (resolve, reject) {\n\n        var apiUrl = \'https://ru.wikipedia.org/w/api.php\';\n        var http = new XMLHttpRequest();\n        http.open(\'POST\', apiUrl);\n\n        http.addEventListener(\'readystatechange\', function () {\n            if (this.readyState == 4) {\n                seachText = JSON.parse(this.responseText);\n                this.status == 200?resolve(seachText):reject(\'Error\');\n            }\n        });\n        http.send(body);\n    });\n\n}\nvar time;\ntextPressAjax.addEventListener(\'input\', ()=>{\n    search().then((data)=>{\n        time && clearTimeout(time);\n        time = setTimeout( ()=>{\n            for (var i = 0; i < data[1].length && i < 10; i++) {\n\n                var spanPressAjax = document.createElement(\'span\');\n                spanPressAjax.classList.add(\'ajax__text\');\n                spanPressAjax.innerHTML = `<a href="${data[3][i]}" target="_blank">${data[1][i]}</a>`;\n                conteinerAjax.appendChild(spanPressAjax);\n            }\n        }  , 500,[data]);\n    })\n\n});\n\n\n\nfunction remuveDom() {\n    while (conteinerAjax.childElementCount != 1) {\n        conteinerAjax.lastElementChild.remove()\n    }\n}\n';
+
+var html703 = '';
+
+var fun703 = function fun703() {
+    elWin.innerHTML = html703;
+    var conteinerAjax = document.createElement('div');
+    var textPressAjax = document.createElement('input');
+    conteinerAjax.classList.add('ajax');
+    textPressAjax.setAttribute('id', 'textPressAjax');
+    textPressAjax.classList.add('ajax__search');
+    textPressAjax.setAttribute('value', 'Поиск...');
+    textPressAjax.maxLength = '20';
+    elWin.appendChild(conteinerAjax);
+    conteinerAjax.appendChild(textPressAjax);
+    textPressAjax.addEventListener('focus', function (e) {
+        if (e.target.value == 'Поиск...') {
+            e.target.value = '';
+        }
+    });
+    textPressAjax.addEventListener('blur', function (e) {
+        setTimeout(remuveDom, 500);
+    });
+
+    function search(time) {
+        var seachText, spanPressAjax;
+        if (conteinerAjax.childElementCount != 1) {
+            remuveDom();
+        }
+
+        var params = {
+            action: 'opensearch',
+            origin: '*',
+            format: 'json',
+            search: ''
+        };
+        params.search = textPressAjax.value;
+        var body = Object.keys(params).map(function (prop) {
+            return prop + '=' + params[prop];
+        }).join('&');
+        return new Promise(function (resolve, reject) {
+
+            var apiUrl = 'https://ru.wikipedia.org/w/api.php';
+            var http = new XMLHttpRequest();
+            http.open('POST', apiUrl);
+
+            http.addEventListener('readystatechange', function () {
+                if (this.readyState == 4) {
+                    seachText = JSON.parse(this.responseText);
+                    this.status == 200 ? resolve(seachText) : reject('Error');
+                }
+            });
+            http.send(body);
+        });
+    }
+    var time;
+    textPressAjax.addEventListener('input', function () {
+        search().then(function (data) {
+            time && clearTimeout(time);
+            time = setTimeout(function () {
+                for (var i = 0; i < data[1].length && i < 10; i++) {
+
+                    var spanPressAjax = document.createElement('span');
+                    spanPressAjax.classList.add('ajax__text');
+                    spanPressAjax.innerHTML = '<a href="' + data[3][i] + '" target="_blank">' + data[1][i] + '</a>';
+                    conteinerAjax.appendChild(spanPressAjax);
+                }
+            }, 600, [data]);
+        });
+    });
+
+    function remuveDom() {
+        while (conteinerAjax.childElementCount != 1) {
+            conteinerAjax.lastElementChild.remove();
+        }
+    }
+};
+
+TextWindows[703] = new Dz(html703, js703, win703, fun703);
+////// End 7-03
