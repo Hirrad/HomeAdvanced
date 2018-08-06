@@ -1,0 +1,171 @@
+//Var
+@import "./var/var";
+///////Base
+@import "normalize";
+
+// Box
+@import "./box/header";
+@import "./box/body";
+@import "./box/conteiner_lesson";
+@import "./box/nav-level";
+@import "./box/footer";
+
+//Layout
+
+
+//
+
+
+.b {
+  display: inline-block;
+  padding: 30px;
+}
+
+.b1 {
+  background: steelblue;
+}
+
+.b2 {
+  background: orangered;
+}
+
+.button {
+  display: block;
+  width: 150px;
+  height: 30px;
+  margin: 50px auto;
+  padding-left: 40px;
+  text-align: left;
+}
+
+.container {
+  width: 300px;
+  margin: 50px auto;
+}
+
+.textEducationHidden {
+  display: none;
+}
+
+.textEducationNoHidden {
+
+}
+
+.submitEducation {
+  /*margin-top: 15px;*/
+  /*display: block;*/
+}
+
+.buttonConteiner {
+  /*position: relative;*/
+  height: 10vh;
+  margin-right: 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.conteiner_form {
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 81, .1);
+  height: 100vh;
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*height: 50%;*/
+
+
+}
+
+.conteiner_form__input {
+  display: block;
+  margin: 20px 15px;
+
+}
+
+.conteiner_form__form {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: black 2px solid;
+  padding-bottom: 20px;
+  background-color: #fff;
+
+}
+
+.formOnOff{
+  display: none;
+
+}
+
+.ajax{
+  display: flex;
+  //align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 200px;
+  box-sizing: border-box;
+  &__text, &__search{
+
+    box-sizing: border-box;
+    margin: 0px 10px;
+    width: 100%;
+    border: 1px solid #0f0f0f;
+  padding: 5px;
+    min-height: 25px;
+  }
+  &__text{
+    border-top: none;
+  }
+
+}
+
+///// task 7-01
+.conteinerSelect{
+  display: flex;
+  align-items: center;
+  height: 23px;
+  &> label{
+    width: 30px;
+    margin: 0 5px;
+  }
+}
+.conteinerSelect> select{
+  pointer-events: none;
+  padding-left: 5px;
+  width: 60px;
+  appearance: none;
+  height: 20px;
+}
+.up {
+  margin: 0 0 3px 3px;
+
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #a3ff58;
+  &:hover{
+    border-bottom: 5px solid #50ffda;
+  }
+}
+.down {
+  margin: 0 0 3px 3px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #a3ff58;
+  &:hover{
+    border-top: 5px solid #50ffda;
+  }
+
+}
+
+/// End task 7-01

@@ -1,0 +1,64 @@
+.conteinerWin {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.68);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 95%;
+  height: 89%;
+
+  background: #e5fffd;
+  border: $border;
+  &__task{
+    margin: 10px 5px 0px 5px;
+    padding: 2px 5px;
+    flex-grow: 300;
+    border-radius: $borderRadius;
+    border: $secondaryBorder;
+    background: $backgroundText;
+    box-sizing: border-box;
+    overflow: auto;
+  }
+
+  &__text{
+    margin: 5px;
+    padding: 2px 5px;
+    flex-grow: 999;
+    border-radius: $borderRadius;
+    border: $secondaryBorder;
+    background: $backgroundText;
+    box-sizing: border-box;
+    overflow: auto;
+
+
+  }
+  &__flex{
+    flex-wrap: nowrap;
+    display: flex;
+    //align-items: right;
+    //align-items: stretch;
+    flex-direction: row;
+    max-height: 46%;
+    flex-grow: 600;
+
+
+    &__js, &__html{
+
+      margin: 0px 5px 5px 5px;
+      padding: 2px 5px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      border-radius: $borderRadius;
+      border: $secondaryBorder;
+      background: $backgroundText;
+      width: 100%;
+      overflow: auto;
+    }
+
+  }
+}
