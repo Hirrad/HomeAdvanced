@@ -4,10 +4,13 @@ function Dz(html, js, win, fun) {
     this.js = js;
     this.fun = fun;
     this.html = html;
-    this.win = win
-    this.jsBr = (function (js) {
-        return js.replace(/;/g, ';<Br>');
-
+    this.win = win;
+    // this.jsBr = (function (js) {
+    //     return js.replace(/;/g, ';<Br>');
+    //
+    // })(this.js);
+    this.jsBr= (function (js) {
+        return '<pre><code data-language="javascript">'+js+'</code></pre>';
     })(this.js);
 }
 

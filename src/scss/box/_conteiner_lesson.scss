@@ -1,7 +1,7 @@
 .conteinerWin {
   font-family: 'Exo 2', sans-serif;
-  font-size: 12px;
-  color: rgba(0, 0, 0, 0.68);
+  font-size: $size;
+  color: rgba(0, 0, 0, .9);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
