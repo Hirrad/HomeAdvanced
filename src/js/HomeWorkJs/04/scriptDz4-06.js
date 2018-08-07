@@ -92,9 +92,5 @@ TextWindows[406]=new Dz(html406,js406,win406,fun406);
 // console.log(simple(2,10));
 
 
-elWin.innerHTML='<pre><code data-language="js">def openFile(path):\n' +
-    '    file = open(path, "r")\n' +
-    '    content = file.read()\n' +
-    '    file.close()\n' +
-    '    return content</code></pre>'
+
 
