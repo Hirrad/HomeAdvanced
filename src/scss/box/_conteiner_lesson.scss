@@ -5,23 +5,24 @@
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin: 0 auto;
   width: 95%;
   height: 89%;
+  min-height: 250px;
 
   background: #e5fffd;
   border: $border;
   &__task{
     margin: 10px 5px 0px 5px;
     padding: 2px 5px;
-    flex-grow: 300;
+    flex-grow: 40;
     border-radius: $borderRadius;
     border: $secondaryBorder;
     background: $backgroundText;
     box-sizing: border-box;
-    overflow: auto;
+    min-height: 250px;
+    //overflow: auto;
   }
 
   &__text{
@@ -32,7 +33,10 @@
     border: $secondaryBorder;
     background: $backgroundText;
     box-sizing: border-box;
+    height: 100%;
     overflow: auto;
+    min-height: 300px;
+
 
 
   }
@@ -43,11 +47,11 @@
     //align-items: stretch;
     flex-direction: row;
     max-height: 46%;
-    flex-grow: 600;
+    flex-grow: 1;
 
 
     &__js, &__html{
-
+      flex-grow: 40;
       margin: 0px 5px 5px 5px;
       padding: 2px 5px;
       -webkit-box-sizing: border-box;
@@ -57,6 +61,7 @@
       border: $secondaryBorder;
       background: $backgroundText;
       width: 100%;
+      min-height: 300px;
       overflow: auto;
     }
 

@@ -1,7 +1,16 @@
 ///// Begin 7-03
 let win703 = `Переписать поиск по wiki, используя Promise.`;
 
-let js703 = `textPressAjax.addEventListener('focus', function (e) {
+let js703 = `let conteinerAjax = document.createElement('div');
+    let textPressAjax = document.createElement('input');
+    conteinerAjax.classList.add('ajax');
+    textPressAjax.setAttribute('id', 'textPressAjax');
+    textPressAjax.classList.add('ajax__search');
+    textPressAjax.setAttribute('value', 'Поиск...');
+    textPressAjax.maxLength = '20';
+    elWin.appendChild(conteinerAjax);
+    conteinerAjax.appendChild(textPressAjax);
+textPressAjax.addEventListener('focus', function (e) {
         if (e.target.value == 'Поиск...') {
             e.target.value = '';
         }

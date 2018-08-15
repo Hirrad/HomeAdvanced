@@ -66,7 +66,7 @@ gulp.task('css', () => {
 });
 
 gulp.task('js', () => {
-    gulp.src(['./src/js/variable/var.js','./src/js/variable/object.js',PATH.src.js,'./src/js/variable/prism.js','./src/js/variable/Event.js'])
+    gulp.src(['./src/js/variable/var.js','./src/js/variable/object.js',PATH.src.js,'./src/js/variable/prism.js','./src/js/variable/jscolor.js','./src/js/variable/Event.js'])
 
         .pipe(newer(PATH.dest.js))
         .pipe(gulpConcat('script.js'))

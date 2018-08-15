@@ -27,7 +27,7 @@ var delay=function (ms) {
 
 delay(2000).then(doStuff).catch((r)=>log('Please enter a valid delay. You entered: '+r));`;
 
-let html702='<div class="promis"></div><div class="promis"></div>';
+let html702=`<div class="promis"></div><div class="promis"></div>`;
 
 let fun702 = function(){
     var log;

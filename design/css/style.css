@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -341,9 +342,6 @@ body {
   .body {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff6793aa",endColorstr="#ffdbf4ff",GradientType=1); } }
 
-.gradient {
-  height: 100vh; }
-
 .conteinerWin {
   font-family: 'Exo 2', sans-serif;
   font-size: 13px;
@@ -356,25 +354,26 @@ body {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   margin: 0 auto;
   width: 95%;
   height: 89%;
+  min-height: 250px;
   background: #e5fffd;
   border: rgba(19, 47, 23, 0.22) 1px solid; }
   .conteinerWin__task {
     margin: 10px 5px 0px 5px;
     padding: 2px 5px;
-    -webkit-box-flex: 300;
-    -ms-flex-positive: 300;
-    flex-grow: 300;
+    -webkit-box-flex: 40;
+    -ms-flex-positive: 40;
+    flex-grow: 40;
     border-radius: 5px;
     border: rgba(19, 47, 23, 0.22) 2px solid;
     background: #ffffff;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    overflow: auto; }
+    min-height: 250px; }
   .conteinerWin__text {
     margin: 5px;
     padding: 2px 5px;
@@ -386,7 +385,9 @@ body {
     background: #ffffff;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    overflow: auto; }
+    height: 100%;
+    overflow: auto;
+    min-height: 300px; }
   .conteinerWin__flex {
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
@@ -398,10 +399,13 @@ body {
     -ms-flex-direction: row;
     flex-direction: row;
     max-height: 46%;
-    -webkit-box-flex: 600;
-    -ms-flex-positive: 600;
-    flex-grow: 600; }
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1; }
     .conteinerWin__flex__js, .conteinerWin__flex__html {
+      -webkit-box-flex: 40;
+      -ms-flex-positive: 40;
+      flex-grow: 40;
       margin: 0px 5px 5px 5px;
       padding: 2px 5px;
       -webkit-box-sizing: border-box;
@@ -410,6 +414,7 @@ body {
       border: rgba(19, 47, 23, 0.22) 2px solid;
       background: #ffffff;
       width: 100%;
+      min-height: 300px;
       overflow: auto; }
 
 .menu {
@@ -517,6 +522,114 @@ footer {
   font-family: "Exo", sans-serif;
   font-size: 12px;
   color: #fff; }
+
+.characterCheckIn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap; }
+
+.inputName {
+  display: none; }
+
+.showingCharacters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-top: 5px; }
+
+.newCheckbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 170px;
+  margin-bottom: 5px; }
+  .newCheckbox input {
+    display: none;
+    /* <--скрываем дефолтный чекбокс */ }
+  .newCheckbox > span {
+    margin-right: 10px; }
+  .newCheckbox:last-child {
+    margin-bottom: 15px; }
+
+.newCheckbox span {
+  /* <-- стилизируем новый */
+  height: 10px;
+  width: 10px;
+  border: 1px solid gray;
+  display: block;
+  position: relative;
+  background-color: #FFF;
+  border-radius: 2px;
+  padding: 3px; }
+
+[type=checkbox]:checked + span:before {
+  /* <-- ставим иконку, когда чекбокс включен  */
+  content: '\2714';
+  position: absolute;
+  top: -5px;
+  left: 0;
+  font-size: 23px;
+  color: #70A000; }
+
+.checkIn__check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .checkIn__check:first-child {
+    margin-top: 10px; }
+
+.canvasChar {
+  width: 100px;
+  height: 190px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 5px; }
+
+.radio {
+  display: none;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .radio span {
+    /* <-- стилизируем новый */
+    height: 7px;
+    width: 7px;
+    border: 1px solid gray;
+    display: block;
+    position: relative;
+    background-color: #FFF;
+    border-radius: 7px;
+    padding: 3px; }
+  .radio input {
+    display: none;
+    /* <--скрываем дефолтный чекбокс */ }
+  .radio > span {
+    margin: 0px 7px; }
+
+[type=radio]:checked + span:before {
+  /* <-- ставим иконку, когда чекбокс включен  */
+  content: '';
+  position: absolute;
+  top: 23%;
+  left: 23%;
+  width: 7px;
+  height: 7px;
+  background: #6B96AD;
+  border-radius: 5px; }
+
+.jscolor {
+  display: none; }
 
 .b {
   display: inline-block;

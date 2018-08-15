@@ -21,7 +21,7 @@ menuFirstLevel.addEventListener('mouseover', function () {
     elTask.textContent=winTask;
     elWin.innerHTML=winText;
     console.clear();
-    
+
 });
 
 ///////////////////// end of events

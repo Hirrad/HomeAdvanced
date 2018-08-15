@@ -1,0 +1,47 @@
+
+.radio {
+  //display: flex;
+  display: none;
+  align-items: center;
+
+
+& span{
+  /* <-- стилизируем новый */
+  height: 7px;
+  width: 7px;
+  border: 1px solid gray;
+  display: block;
+  position: relative;
+  background-color: #FFF;
+  border-radius: 7px;
+  padding: 3px;
+}
+  //margin-bottom: 5px;
+
+  & input {
+    display: none; /* <--скрываем дефолтный чекбокс */
+  }
+  & > span {
+    margin: 0px 7px;
+  }
+}
+
+
+
+[type=radio]:checked + span:before { /* <-- ставим иконку, когда чекбокс включен  */
+  content: '';
+  position: absolute;
+  //top: -5px;
+  top: 23%;
+  left: 23%;
+
+
+  width: 7px;
+  height: 7px;
+  background: #6B96AD;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+
+}
+
