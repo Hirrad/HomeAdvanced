@@ -530,9 +530,6 @@ footer {
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap; }
 
-.inputName {
-  display: none; }
-
 .showingCharacters {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -588,6 +585,9 @@ footer {
   .checkIn__check:first-child {
     margin-top: 10px; }
 
+.noDisplay {
+  display: none; }
+
 .canvasChar {
   width: 100px;
   height: 190px;
@@ -627,9 +627,6 @@ footer {
   height: 7px;
   background: #6B96AD;
   border-radius: 5px; }
-
-.jscolor {
-  display: none; }
 
 .b {
   display: inline-block;
