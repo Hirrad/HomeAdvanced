@@ -183,47 +183,54 @@ let js1003=`// рисуем человечка CharInfoArray-обэкт с оп�
 
 //Функуия скрытия инпутов
     let noDisply = function (el, elNoDisply, displyValue, elInput) {
-        var textInput = 'Введите имя';
-        var elFormChar = document.querySelector(el);
-        elFormChar.addEventListener('change', (e) => {
-            var colorHareArray = Array.prototype.slice.call(document.querySelectorAll(elNoDisply));
-            if (e.target.checked) {
-                return colorHareArray.map((i) => {
-                    i.style.display = displyValue;
-                })
-            }
-            colorHareArray.map((i) => {
-                i.style.display = 'none'
-            })
-            if (elInput) {
-                document.querySelector(elInput).value = textInput;
-            }
+        // var textInput = 'Введите имя';
+        var elForm = document.querySelector(elNoDisply);
+        document.querySelector(el).addEventListener('change', (e) => {
+            elForm.classList.toggle('noDisplay');
+            if (elForm.dataset.input=='inputName') return elForm.value='';
         })
+        // var textInput = 'Введите имя';
+        // var elFormChar = document.querySelector(el);
+        // elFormChar.addEventListener('change', (e) => {
+        //     var colorHareArray = Array.prototype.slice.call(document.querySelectorAll(elNoDisply));
+        //     if (e.target.checked) {
+        //         return colorHareArray.map((i) => {
+        //             i.style.display = displyValue;
+        //         })
+        //     }
+        //     colorHareArray.map((i) => {
+        //         i.style.display = 'none'
+        //     })
+        //     if (elInput) {
+        //         document.querySelector(elInput).value = textInput;
+        //     }
+        // })
     }
 
-    noDisply('#checkColorPants', '#inputColorPants', 'inline');
-    noDisply('#checkColorHair', '#inputColorHair', 'inline');
-    noDisply('#checkColorT-shirt', '#inputColorT-shirt', 'inline');
-    noDisply('#checkName', '#inputName', 'flex', '.inputName');
+    noDisply('#checkColorPants', '#inputColorPants');
+    noDisply('#checkColorHair', '#inputColorHair');
+    noDisply('#checkColorT-shirt', '#inputColorT-shirt');
+    noDisply('#checkName', '#inputName');
 
 //функция скрытия первоначального текста в input
-    let inputFocusBlur = function (el) {
-        var elInput = document.querySelector(el);
-        elInput.addEventListener('focus', (e) => {
-            if (e.target.value = 'Введите имя') {
-                return e.target.value = '';
-            }
-        })
-        elInput.addEventListener('blur', (e) => {
-            if (e.target.value == '') {
-                return e.target.value = 'Введите имя';
-            }
-        })
-        elInput.addEventListener('input', (e) => {
-            if (e.target.style.display == 'none') return e.target.value = 'Введите имя';
-        })
-    }
-    inputFocusBlur('.inputName');
+//     let inputFocusBlur = function (el) {
+//         var elInput = document.querySelector(el);
+//         // elInput.addEventListener('focus', (e) => {
+//         //     if (e.target.value = 'Введите имя') {
+//         //         return e.target.value = '';
+//         //     }
+//         // })
+//         // elInput.addEventListener('blur', (e) => {
+//         //     if (e.target.value == '') {
+//         //         return e.target.value = 'Введите имя';
+//         //     }
+//         // })
+//         // elInput.addEventListener('input', (e) => {
+//         //
+//         //     if (e.target.classList.contains('noDisplay')) return log('ty');
+//         // })
+//     }
+//     inputFocusBlur('.inputName');
 
     const Default = {
 
