@@ -18,7 +18,7 @@ elTask=document.querySelector('.conteinerWin__task');
 menuFirstLevel=document.querySelector('.menu__first-level');
 elJs.innerHTML = jsText;
 elHtml.innerHTML = htmlText;
-elWin.innerHTML = winText;
+// elWin.innerHTML = winText;
 elTask.innerHTML=winTask;
 //
 /////////////////////End of variables
