@@ -1,5 +1,7 @@
 'use strict';
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 ///////////////////// Beginning of variablesBe
 
 var TextWindows = {},
@@ -2920,37 +2922,6 @@ TextWindows[601] = new Dz(html601, js601, win601, fun601);
 ////// End 6-01
 
 
-///// Begin 8-01
-
-
-var win801 = '\u0415\u0441\u0442\u044C \u0441\u0430\u0439\u0442, \u043D\u0430 \u043A\u043E\u0442\u043E\u0440\u043E\u043C \u0447\u0435\u043B\u043E\u0432\u0435\u043A \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u0443\u0435\u0442\u0441\u044F \u0438 \u043C\u043E\u0436\u0435\u0442 \u0443\u043A\u0430\u0437\u0430\u0442\u044C, \u0447\u0442\u043E \u0443 \u043D\u0435\u0433\u043E \u0435\u0441\u0442\u044C \u0441\u043E\u0431\u0430\u043A\u0430.<br>\n    \u0412 \u0437\u0430\u0432\u0438\u0441\u0438\u043C\u043E\u0441\u0442\u0438 \u043E\u0442 \u044D\u0442\u043E\u0433\u043E \u043F\u043E\u043B\u0443\u0447\u0438\u043C \u0442\u0430\u043A\u0438\u0435 \u0432\u0430\u0440\u0438\u0430\u043D\u0442\u044B:<br>\n    var user1 = { name: "Harry", dog: null };<br>\nvar user2 = { name: "David", dog: { name: "Lucky" } };<br>\n\u041F\u043E\u0441\u043B\u0435 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u0432\u043B\u0430\u0434\u0435\u043B\u044C\u0446\u0430\u043C \u0441\u043E\u0431\u0430\u043A\u0438 \u043F\u0440\u0435\u0434\u043B\u0430\u0433\u0430\u0435\u0442\u0441\u044F \u0441\u043A\u0438\u0434\u043A\u0430,<br>\n    \u0437\u0430 \u043A\u043E\u0442\u043E\u0440\u0443\u044E \u043E\u0442\u0432\u0435\u0447\u0430\u0435\u0442 \u0432\u043E\u0442 \u0442\u0430\u043A\u043E\u0439 \u043A\u043E\u0434:<br>\n    function notify() {<br>\n        console.log("You have a dog! Use this code for 50% off: UG4H6QE");<br>\n    }\nfunction checkDogOwner(user, callback) {<br>\n    if (user && user.dog) {<br>\n        callback();<br>\n    }\n}\n// on registration success<br>\ncheckDogOwner(user, notify);<br>\n\n\u0412\u0430\u043C \u043D\u0443\u0436\u043D\u043E \u043F\u043E\u043A\u0440\u044B\u0442\u044C \u0442\u0435\u0441\u0442\u0430\u043C\u0438 \u0440\u0430\u0431\u043E\u0442\u0443 \u0444\u0443\u043D\u043A\u0446\u0438\u0438 checkDogOwner.<br>';
-
-var js801 = 'describe("function checkDogOwner() test", function () {\n    var user,\n        spy,\n        callBack;\n\n    beforeEach(function() {\n        user = { name: "David", dog: { name: "Lucky" } };\n        spy = {\n            foo: function() {}\n        };\n        spyOn(spy, "foo");\n        callBack = function() {\n            spy.foo();\n        };\n    });\n\n    it("function exist", function () {\n        expect(checkDogOwner).toBeDefined();\n    });\n\n    it("type of checkDogOwner is function", function () {\n        expect(typeof checkDogOwner).toBe("function");\n    });\n\n    it("function have 2 expected arguments", function () {\n        expect(checkDogOwner.length).toBe(2);\n    });\n\n    it("function returns undefined", function () {\n        expect(checkDogOwner()).toBe(void(0));\n        expect(checkDogOwner(user, callBack)).toBe(void(0));\n    });\n\n    it("function call with one any argument throw exeption", function () {\n        expect(() => checkDogOwner(user)).toThrow();\n    });\n\n    it("function call with second non-function callback argument throw exeption", function () {\n        callBack = 6;\n        expect(() => checkDogOwner(user, callBack)).toThrow();\n    });\n\n    it("function call callback function if first argument has not-null dog propertie", function () {\n        checkDogOwner(user, callBack);\n        expect(spy.foo).toHaveBeenCalled();\n    });\n\n    it("function don\'t call callback function if first argument has null or undefined dog propertie", function () {\n        user = 5;\n        checkDogOwner(user, callBack);\n        expect(spy.foo).not.toHaveBeenCalled();\n    });\n});\n';
-
-var html801 = 'Спасибо за подсказки Ивану!';
-
-var fun801 = function fun801() {
-    elWin.innerHTML = html401;
-};
-
-TextWindows[801] = new Dz(html801, js801, win801, fun801);
-////// End 8-01
-
-
-///// Begin 8-02
-var win802 = '\u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0442\u0435\u0441\u0442\u044B \u0434\u043B\u044F \u043F\u0440\u043E\u0432\u0435\u0440\u043A\u0438 \u0440\u0430\u0431\u043E\u0442\u044B \u043C\u0435\u0442\u043E\u0434\u0430 splice, \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u0435\u0441\u0442\u044C \u0443 \u043C\u0430\u0441\u0441\u0438\u0432\u043E\u0432.<br>\n\u0422\u043E \u0435\u0441\u0442\u044C, \u0432 \u0434\u0430\u043D\u043D\u043E\u043C \u0441\u043B\u0443\u0447\u0430\u0435 \u043C\u044B \u043F\u0438\u0448\u0435\u043C \u0442\u043E\u043B\u044C\u043A\u043E \u0442\u0435\u0441\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u0431\u0443\u0434\u0443\u0442 \u0440\u0430\u0431\u043E\u0442\u0430\u0442\u044C \u0441 \u043C\u0430\u0441\u0441\u0438\u0432\u0430\u043C\u0438 \u0438 \u0430\u043A\u0442\u0438\u0432\u043D\u043E \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C \u043C\u0435\u0442\u043E\u0434 splice.<br>\n\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u043D\u0443\u0436\u043D\u043E \u043A\u0430\u0436\u0434\u0443\u044E \u043C\u0435\u043B\u043E\u0447\u044C \u0440\u0430\u0431\u043E\u0442\u044B \u044D\u0442\u043E\u0433\u043E \u043C\u0435\u0442\u043E\u0434\u0430:<br>\n\u0435\u0441\u0442\u044C \u043B\u0438 \u043C\u0435\u0442\u043E\u0434 \u0432\u043E\u043E\u0431\u0449\u0435, \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0435 \u043B\u0438 \u043F\u0435\u0440\u0435\u0434\u0430\u043D\u044B \u043F\u0430\u0440\u0430\u043C\u0435\u0442\u0440\u044B<br>\n(\u043D\u0430\u043F\u043E\u043C\u043D\u044E, \u0447\u0442\u043E \u043D\u0435\u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0430\u0440\u0430\u043C\u0435\u0442\u0440\u044B \u043D\u0435 \u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u0435),<br>\n\u043A\u0430\u043A\u043E\u0439 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 \u0432\u043E\u0437\u0432\u0440\u0430\u0449\u0430\u0435\u0442 \u043C\u0435\u0442\u043E\u0434, \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E \u043B\u0438 \u043E\u043D \u043E\u0442\u0440\u0430\u0431\u0430\u0442\u044B\u0432\u0430\u0435\u0442 \u0432 \u043F\u0440\u0438\u043D\u0446\u0438\u043F\u0435.<br>';
-
-var js802 = 'describe(\'splice\', function () {\n    var arr,ar,arrayFun, funArray;\n\n    beforeEach(function () {\n        arr = ["\u042F", "\u043D\u0435\u043D\u0430\u0432\u0438\u0436\u0443", "Jasmine", "!"];\n        ar;\n\n    });\n    it(\'does the function exist\', function () {\n        expect((function(){\n\t\treturn Array.prototype.hasOwnProperty(\'splice\')\n\t\t})()).toBe(true);\n        \n\n    })\n\n    it(\'Will issue a function with two parameters\', function () {\n        expect((function () {\n            ar = arr.splice(0, 1);\n            return ar;\n\n        })()).toEqual(["\u042F"]);\n        expect((function () {\n            ar = arr.splice(1, 2);\n            return ar;\n\n        })()).toEqual(["Jasmine", "!"]);\n\n    })\n    it(\'how an array with two parameters changes\', function () {\n        expect((function () {\n            arr.splice(0, 1);\n            return arr;\n\n        })()).toEqual(["\u043D\u0435\u043D\u0430\u0432\u0438\u0436\u0443", "Jasmine", "!"]);\n\n        expect((function () {\n            arr.splice(1, 2);\n            return arr;\n\n        })()).toEqual(["\u043D\u0435\u043D\u0430\u0432\u0438\u0436\u0443"]);\n\n\n    })\n    it(\'Will issue a function with 1 parameter\', function () {\n        expect((function () {\n            ar = arr.splice(3);\n            return ar;\n\n        })()).toEqual(["!"]);\n\n        expect((function () {\n            ar = arr.splice(1);\n            return ar;\n\n        })()).toEqual(["\u043D\u0435\u043D\u0430\u0432\u0438\u0436\u0443", "Jasmine"]);\n    })\n\n    it(\'how the array changes with a function with 1 parameter\', function () {\n        expect((function () {\n            arr.splice(3);\n            return arr;\n\n        })()).toEqual(["\u042F", "\u043D\u0435\u043D\u0430\u0432\u0438\u0436\u0443", "Jasmine"]);\n\n        expect((function () {\n            arr.splice(1);\n            return arr;\n\n        })()).toEqual(["\u042F"]);\n    })\n\n    it(\'how the array changes with the function of replacement and insertion\', function () {\n        expect((function () {\n            arr.splice(1, 0, "\u0440\u0435\u0430\u043B\u044C\u043D\u043E");\n            return arr;\n\n        })()).toEqual(["\u042F", "\u0440\u0435\u0430\u043B\u044C\u043D\u043E", "\u043D\u0435\u043D\u0430\u0432\u0438\u0436\u0443", "Jasmine", "!"]);\n\n        expect((function () {\n            arr.splice(0, 5, "\u041F\u0440\u0430\u0432\u0434\u0430!");\n            return arr;\n\n        })()).toEqual(["\u041F\u0440\u0430\u0432\u0434\u0430!"]);\n    })\n    it(\'that returns a function with a replacement or an insertion\', function () {\n        expect((function () {\n            ar =arr.splice(1, 0, "\u0440\u0435\u0430\u043B\u044C\u043D\u043E");\n            return ar;\n\n        })()).toEqual([]);\n\n        expect((function () {\n            ar=arr.splice(0, 5, "\u041F\u0440\u0430\u0432\u0434\u0430!");\n            return ar;\n\n        })()).toEqual(["\u042F", "\u0440\u0435\u0430\u043B\u044C\u043D\u043E", "\u043D\u0435\u043D\u0430\u0432\u0438\u0436\u0443", "Jasmine", "!"]);\n    })\n    it(\'If nothing is passed to the function or an empty string is passed\', function () {\n        expect((function () {\n            ar =arr.splice();\n            return ar;\n\n        })()).toEqual([]);\n\n        expect((function () {\n            ar=arr.splice(\'\');\n            return ar;\n\n        })()).toEqual(["\u042F", "\u043D\u0435\u043D\u0430\u0432\u0438\u0436\u0443", "Jasmine", "!"]);\n\n        expect((function () {\n            arr.splice(\'\');\n            return arr;\n\n        })()).toEqual([]);\n\n        expect((function () {\n            arr.splice();\n            return arr;\n\n        })()).toEqual([]);\n    })\n\n})\n';
-
-var html802 = '';
-
-var fun802 = function fun802() {
-    elWin.innerHTML = '';
-};
-
-TextWindows[802] = new Dz(html802, js802, win802, fun802);
-////// End 4-01
-
 ///// Begin 7-01
 
 // var elSelect=document.querySelectorAll('.conteinerSelect'); //первый вариант
@@ -3232,6 +3203,37 @@ var fun703 = function fun703() {
 TextWindows[703] = new Dz(html703, js703, win703, fun703);
 ////// End 7-03
 
+
+///// Begin 8-01
+
+
+var win801 = '\u0415\u0441\u0442\u044C \u0441\u0430\u0439\u0442, \u043D\u0430 \u043A\u043E\u0442\u043E\u0440\u043E\u043C \u0447\u0435\u043B\u043E\u0432\u0435\u043A \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u0443\u0435\u0442\u0441\u044F \u0438 \u043C\u043E\u0436\u0435\u0442 \u0443\u043A\u0430\u0437\u0430\u0442\u044C, \u0447\u0442\u043E \u0443 \u043D\u0435\u0433\u043E \u0435\u0441\u0442\u044C \u0441\u043E\u0431\u0430\u043A\u0430.<br>\n    \u0412 \u0437\u0430\u0432\u0438\u0441\u0438\u043C\u043E\u0441\u0442\u0438 \u043E\u0442 \u044D\u0442\u043E\u0433\u043E \u043F\u043E\u043B\u0443\u0447\u0438\u043C \u0442\u0430\u043A\u0438\u0435 \u0432\u0430\u0440\u0438\u0430\u043D\u0442\u044B:<br>\n    var user1 = { name: "Harry", dog: null };<br>\nvar user2 = { name: "David", dog: { name: "Lucky" } };<br>\n\u041F\u043E\u0441\u043B\u0435 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u0432\u043B\u0430\u0434\u0435\u043B\u044C\u0446\u0430\u043C \u0441\u043E\u0431\u0430\u043A\u0438 \u043F\u0440\u0435\u0434\u043B\u0430\u0433\u0430\u0435\u0442\u0441\u044F \u0441\u043A\u0438\u0434\u043A\u0430,<br>\n    \u0437\u0430 \u043A\u043E\u0442\u043E\u0440\u0443\u044E \u043E\u0442\u0432\u0435\u0447\u0430\u0435\u0442 \u0432\u043E\u0442 \u0442\u0430\u043A\u043E\u0439 \u043A\u043E\u0434:<br>\n    function notify() {<br>\n        console.log("You have a dog! Use this code for 50% off: UG4H6QE");<br>\n    }\nfunction checkDogOwner(user, callback) {<br>\n    if (user && user.dog) {<br>\n        callback();<br>\n    }\n}\n// on registration success<br>\ncheckDogOwner(user, notify);<br>\n\n\u0412\u0430\u043C \u043D\u0443\u0436\u043D\u043E \u043F\u043E\u043A\u0440\u044B\u0442\u044C \u0442\u0435\u0441\u0442\u0430\u043C\u0438 \u0440\u0430\u0431\u043E\u0442\u0443 \u0444\u0443\u043D\u043A\u0446\u0438\u0438 checkDogOwner.<br>';
+
+var js801 = 'describe("function checkDogOwner() test", function () {\n    var user,\n        spy,\n        callBack;\n\n    beforeEach(function() {\n        user = { name: "David", dog: { name: "Lucky" } };\n        spy = {\n            foo: function() {}\n        };\n        spyOn(spy, "foo");\n        callBack = function() {\n            spy.foo();\n        };\n    });\n\n    it("function exist", function () {\n        expect(checkDogOwner).toBeDefined();\n    });\n\n    it("type of checkDogOwner is function", function () {\n        expect(typeof checkDogOwner).toBe("function");\n    });\n\n    it("function have 2 expected arguments", function () {\n        expect(checkDogOwner.length).toBe(2);\n    });\n\n    it("function returns undefined", function () {\n        expect(checkDogOwner()).toBe(void(0));\n        expect(checkDogOwner(user, callBack)).toBe(void(0));\n    });\n\n    it("function call with one any argument throw exeption", function () {\n        expect(() => checkDogOwner(user)).toThrow();\n    });\n\n    it("function call with second non-function callback argument throw exeption", function () {\n        callBack = 6;\n        expect(() => checkDogOwner(user, callBack)).toThrow();\n    });\n\n    it("function call callback function if first argument has not-null dog propertie", function () {\n        checkDogOwner(user, callBack);\n        expect(spy.foo).toHaveBeenCalled();\n    });\n\n    it("function don\'t call callback function if first argument has null or undefined dog propertie", function () {\n        user = 5;\n        checkDogOwner(user, callBack);\n        expect(spy.foo).not.toHaveBeenCalled();\n    });\n});\n';
+
+var html801 = 'Спасибо за подсказки Ивану!';
+
+var fun801 = function fun801() {
+    elWin.innerHTML = html401;
+};
+
+TextWindows[801] = new Dz(html801, js801, win801, fun801);
+////// End 8-01
+
+
+///// Begin 8-02
+var win802 = '\u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0442\u0435\u0441\u0442\u044B \u0434\u043B\u044F \u043F\u0440\u043E\u0432\u0435\u0440\u043A\u0438 \u0440\u0430\u0431\u043E\u0442\u044B \u043C\u0435\u0442\u043E\u0434\u0430 splice, \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u0435\u0441\u0442\u044C \u0443 \u043C\u0430\u0441\u0441\u0438\u0432\u043E\u0432.<br>\n\u0422\u043E \u0435\u0441\u0442\u044C, \u0432 \u0434\u0430\u043D\u043D\u043E\u043C \u0441\u043B\u0443\u0447\u0430\u0435 \u043C\u044B \u043F\u0438\u0448\u0435\u043C \u0442\u043E\u043B\u044C\u043A\u043E \u0442\u0435\u0441\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u0431\u0443\u0434\u0443\u0442 \u0440\u0430\u0431\u043E\u0442\u0430\u0442\u044C \u0441 \u043C\u0430\u0441\u0441\u0438\u0432\u0430\u043C\u0438 \u0438 \u0430\u043A\u0442\u0438\u0432\u043D\u043E \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C \u043C\u0435\u0442\u043E\u0434 splice.<br>\n\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u043D\u0443\u0436\u043D\u043E \u043A\u0430\u0436\u0434\u0443\u044E \u043C\u0435\u043B\u043E\u0447\u044C \u0440\u0430\u0431\u043E\u0442\u044B \u044D\u0442\u043E\u0433\u043E \u043C\u0435\u0442\u043E\u0434\u0430:<br>\n\u0435\u0441\u0442\u044C \u043B\u0438 \u043C\u0435\u0442\u043E\u0434 \u0432\u043E\u043E\u0431\u0449\u0435, \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0435 \u043B\u0438 \u043F\u0435\u0440\u0435\u0434\u0430\u043D\u044B \u043F\u0430\u0440\u0430\u043C\u0435\u0442\u0440\u044B<br>\n(\u043D\u0430\u043F\u043E\u043C\u043D\u044E, \u0447\u0442\u043E \u043D\u0435\u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0430\u0440\u0430\u043C\u0435\u0442\u0440\u044B \u043D\u0435 \u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u0435),<br>\n\u043A\u0430\u043A\u043E\u0439 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 \u0432\u043E\u0437\u0432\u0440\u0430\u0449\u0430\u0435\u0442 \u043C\u0435\u0442\u043E\u0434, \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E \u043B\u0438 \u043E\u043D \u043E\u0442\u0440\u0430\u0431\u0430\u0442\u044B\u0432\u0430\u0435\u0442 \u0432 \u043F\u0440\u0438\u043D\u0446\u0438\u043F\u0435.<br>';
+
+var js802 = 'describe(\'splice\', function () {\n    var arr,ar,arrayFun, funArray;\n\n    beforeEach(function () {\n        arr = ["\u042F", "\u043D\u0435\u043D\u0430\u0432\u0438\u0436\u0443", "Jasmine", "!"];\n        ar;\n\n    });\n    it(\'does the function exist\', function () {\n        expect((function(){\n\t\treturn Array.prototype.hasOwnProperty(\'splice\')\n\t\t})()).toBe(true);\n        \n\n    })\n\n    it(\'Will issue a function with two parameters\', function () {\n        expect((function () {\n            ar = arr.splice(0, 1);\n            return ar;\n\n        })()).toEqual(["\u042F"]);\n        expect((function () {\n            ar = arr.splice(1, 2);\n            return ar;\n\n        })()).toEqual(["Jasmine", "!"]);\n\n    })\n    it(\'how an array with two parameters changes\', function () {\n        expect((function () {\n            arr.splice(0, 1);\n            return arr;\n\n        })()).toEqual(["\u043D\u0435\u043D\u0430\u0432\u0438\u0436\u0443", "Jasmine", "!"]);\n\n        expect((function () {\n            arr.splice(1, 2);\n            return arr;\n\n        })()).toEqual(["\u043D\u0435\u043D\u0430\u0432\u0438\u0436\u0443"]);\n\n\n    })\n    it(\'Will issue a function with 1 parameter\', function () {\n        expect((function () {\n            ar = arr.splice(3);\n            return ar;\n\n        })()).toEqual(["!"]);\n\n        expect((function () {\n            ar = arr.splice(1);\n            return ar;\n\n        })()).toEqual(["\u043D\u0435\u043D\u0430\u0432\u0438\u0436\u0443", "Jasmine"]);\n    })\n\n    it(\'how the array changes with a function with 1 parameter\', function () {\n        expect((function () {\n            arr.splice(3);\n            return arr;\n\n        })()).toEqual(["\u042F", "\u043D\u0435\u043D\u0430\u0432\u0438\u0436\u0443", "Jasmine"]);\n\n        expect((function () {\n            arr.splice(1);\n            return arr;\n\n        })()).toEqual(["\u042F"]);\n    })\n\n    it(\'how the array changes with the function of replacement and insertion\', function () {\n        expect((function () {\n            arr.splice(1, 0, "\u0440\u0435\u0430\u043B\u044C\u043D\u043E");\n            return arr;\n\n        })()).toEqual(["\u042F", "\u0440\u0435\u0430\u043B\u044C\u043D\u043E", "\u043D\u0435\u043D\u0430\u0432\u0438\u0436\u0443", "Jasmine", "!"]);\n\n        expect((function () {\n            arr.splice(0, 5, "\u041F\u0440\u0430\u0432\u0434\u0430!");\n            return arr;\n\n        })()).toEqual(["\u041F\u0440\u0430\u0432\u0434\u0430!"]);\n    })\n    it(\'that returns a function with a replacement or an insertion\', function () {\n        expect((function () {\n            ar =arr.splice(1, 0, "\u0440\u0435\u0430\u043B\u044C\u043D\u043E");\n            return ar;\n\n        })()).toEqual([]);\n\n        expect((function () {\n            ar=arr.splice(0, 5, "\u041F\u0440\u0430\u0432\u0434\u0430!");\n            return ar;\n\n        })()).toEqual(["\u042F", "\u0440\u0435\u0430\u043B\u044C\u043D\u043E", "\u043D\u0435\u043D\u0430\u0432\u0438\u0436\u0443", "Jasmine", "!"]);\n    })\n    it(\'If nothing is passed to the function or an empty string is passed\', function () {\n        expect((function () {\n            ar =arr.splice();\n            return ar;\n\n        })()).toEqual([]);\n\n        expect((function () {\n            ar=arr.splice(\'\');\n            return ar;\n\n        })()).toEqual(["\u042F", "\u043D\u0435\u043D\u0430\u0432\u0438\u0436\u0443", "Jasmine", "!"]);\n\n        expect((function () {\n            arr.splice(\'\');\n            return arr;\n\n        })()).toEqual([]);\n\n        expect((function () {\n            arr.splice();\n            return arr;\n\n        })()).toEqual([]);\n    })\n\n})\n';
+
+var html802 = '';
+
+var fun802 = function fun802() {
+    elWin.innerHTML = '';
+};
+
+TextWindows[802] = new Dz(html802, js802, win802, fun802);
+////// End 4-01
 
 // .
 
@@ -3932,3 +3934,38 @@ TextWindows[1003] = new Dz(html1003, js1003, win1003, fun1003);
 // }
 //
 // showCharOnline();
+
+
+///// Begin 11-02
+var win1102 = '\u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0444\u0443\u043D\u043A\u0446\u0438\u0438 (\u0436\u0435\u043B\u0430\u0442\u0435\u043B\u044C\u043D\u043E \u043A\u0430\u043A \u043C\u043E\u0436\u043D\u043E \u043A\u043E\u0440\u043E\u0447\u0435):<br>\nconst getInitials = ...;<br>\nconsole.log(getInitials({ firstName: "Andy", lastName: "Davidson" })); // A.D.<br>\nconsole.log(getInitials({ firstName: "Andy" })); // A.<br>\nconsole.log(getInitials({ lastName: "Davidson" })); // D.<br>\n\n// ---<br>\nconst doubleArray = ...;<br>\n\nconsole.log(doubleArray([1, 2, 3])); // [1, 2, 3, 1, 2, 3]<br>\nconsole.log(doubleArray([{ one: 1, two: 2 }])); // [{ one: 1, two: 2 }, { one: 1, two: 2 }]<br>\n\n// ---<br>\nconst merge = ...<br>\n\nconsole.log(merge({ one: 1, two: 2 }, { two: 22, three: 3 })); // { one: 1, two: 22, three: 3 }<br>';
+
+var js1102 = 'const doubleArray=function (a) {\n    return  [...a,...a]\n}\nconst merge = function (a) {\n\n    var result=new Object(),i=0;\n    while(arguments[i]){\n        Object.assign(result,arguments[i])\n        i++;\n    }\n    return result\n}\nconst getInitials=function ({firstName, lastName}={}) {\n    return ${firstName ? (firstName[0].toUpperCase() + \'.\') : \'\'}${lastName ? (lastName[0].toUpperCase() + \'.\') : \'\'};\n}';
+
+var html1102 = '';
+
+var fun1102 = function fun1102() {
+    elWin.innerHTML = '';
+    var doubleArray = function doubleArray(a) {
+        return [].concat(_toConsumableArray(a), _toConsumableArray(a));
+    };
+    var merge = function merge(a) {
+
+        var result = new Object(),
+            i = 0;
+        while (arguments[i]) {
+            Object.assign(result, arguments[i]);
+            i++;
+        }
+        return result;
+    };
+    var getInitials = function getInitials() {
+        var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+            firstName = _ref.firstName,
+            lastName = _ref.lastName;
+
+        return '' + (firstName ? firstName[0].toUpperCase() + '.' : '') + (lastName ? lastName[0].toUpperCase() + '.' : '');
+    };
+};
+
+TextWindows[1102] = new Dz(html1102, js1102, win1102, fun1102);
+////// End 11-02
