@@ -60,12 +60,12 @@ function loadImg(e) {
                     var fileData = e.target.result;//base64
                     var error = e.target.error;
                     error&&log('Файл не загрузился!');
-                    var block = \`<div class="blockFlexImgInfo">
+                    var block = '<div class="blockFlexImgInfo">
                                <img src="\${fileData}" alt="">
                              <a href="#" class="deleteImg "></a>
                         <div class="blockFlexImgInfo__name">\${file.name.split('.')[0]}</div>
                         <div class="blockFlexImgInfo__size">\${exchangeByteForMb(file.size)} Mb</div>
-                    </div>\`;
+                    </div>';
                     document.querySelector('.blockFlexImg__square').insertAdjacentHTML('afterEnd', block);
                 };
                 reader.readAsDataURL(file);
@@ -81,14 +81,14 @@ function loadImg(e) {
                 log (66666);
             }
             else {
-                var blockNoImage=\`<article class="infoNoImage">
+                var blockNoImage='<article class="infoNoImage">
                         <div class="flex">
                             <pre class="infoNoImage__info-maxSize">\${file.name.split('.')[0]}</pre>
                             <pre class="infoNoImage__info">\${file.type.split('/')[1]}</pre>
                             <pre class="infoNoImage__info">\${exchangeByteForMb(file.size)} Mb</pre>
                         </div>
                         <pre class="infoNoImage__info__delete ">Delete </pre>
-                    </article>\`;
+                    </article>';
                 document.querySelector('.startFlex__column').insertAdjacentHTML('beforeEnd', blockNoImage);
             }
         });
