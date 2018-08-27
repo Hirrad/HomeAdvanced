@@ -1,0 +1,47 @@
+.positionReletive{
+  position: relative;
+}
+.errorSizeImgConteiner{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 99999;
+  color:$backgroundText ;
+
+
+  padding: 5px;
+  left: 150px;
+  //margin-right: 20px;
+  max-width: 400px;
+  //margin-top: 5px;
+
+  &>div{
+    text-align: center;
+    background: red;
+    margin-top: 5px;
+    padding: 3px;
+    animation: opacityToggle .7s;
+
+    @keyframes opacityToggle{
+      0%{
+        opacity:0;
+      }
+      25%{
+        opacity:.25;
+      }
+      50%{
+        opacity: 0.5;
+      }
+      75%{
+        opacity:.75;
+      }
+      100%{
+        opacity: 1;
+      }
+    }
+    &:nth-child(1){
+      margin-top: 0;
+    }
+  }
+
+}

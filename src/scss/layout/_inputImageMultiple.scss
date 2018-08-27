@@ -1,0 +1,125 @@
+.inputImageMultiple{
+  opacity: 0;
+  width: 90px;
+  height: 90px;
+
+
+}
+//Добавление картинки плюсик
+.blockFlexImg{
+  display: flex;
+  &__square{
+    width: 80px;
+    height: 80px;
+    background: #6B96AD;
+    position: relative;
+    margin:5px ;
+    &::before{
+      content: "";
+      left: 45%;
+      top: 25%;
+      width: 10%;
+      height: 50%;
+      position: absolute;
+      background: #fff;
+    }
+    &::after{
+      content: "";
+      left: 25%;
+      top: 45%;
+      width: 50%;
+      height: 10%;
+      position: absolute;
+      background: #fff;
+    }
+  }
+
+}
+
+.start-flex>img{
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+  margin-top: 10px;
+  &:last-child{
+    margin-right: 0;
+  }
+
+}
+//удаление крестик и стили информации
+.blockFlexImgInfo{
+  &{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+
+  }
+
+  &:hover {
+
+    &::before{
+      color: #fff;
+      top:10px;
+      right:10px;
+
+      position: absolute;
+      content: '⊗';
+
+    }
+
+  }
+
+  &>img {
+
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+  }
+  &__name,&__size{
+    height: 15px;
+    box-sizing: border-box;
+  }
+  &__name{
+    position: relative;
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+
+  }
+
+  .deleteImg{
+    box-sizing: border-box;
+    text-decoration: none;
+    position: absolute;
+    //background-color: #50ffda;
+    color: #ffffff;
+    //font-size:20px;
+    width: 10px;
+    height: 15px;
+    top:10px;
+    right: 10px;
+    opacity: 1;
+    &:hover{
+      &::after{
+        position: absolute;
+        top: 25px;
+        left: -45px;
+        opacity: 1;
+        content: 'Delete';
+      }
+    }
+  }
+}
+
+

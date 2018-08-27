@@ -1,0 +1,59 @@
+.infoNoImage{
+    width: 100%;
+  display: flex;
+justify-content: space-between;
+  flex-wrap: wrap;
+//align-items: center;
+  //margin: 5px;
+  //padding: 0 5px;
+
+  &>pre{
+
+
+    //display: block;
+    box-sizing: border-box;
+    margin-right: 5px;
+    text-overflow: ellipsis;
+    position: relative;
+    //border: 1px red solid;
+    &:last-child{
+      margin-left: 0;
+    }
+  }
+  &__info{
+    &{
+      max-width: 100px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-left: 5px;
+      &:last-child{
+        margin-right: 5px;
+      }
+    }
+    &-maxSize{
+      max-width: 200px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &__delete{
+      //display: block;
+      color: #fbf8ff;
+      text-decoration: none;
+      padding: 0 5px;
+      //width: 20px;
+      //height: 15px;
+      list-style: none;
+      background: $primaryColor; //фон первого уровня
+      border-radius: $borderRadius;
+      border: $border;
+      box-sizing: border-box;
+      cursor: pointer;
+
+      &:hover{
+        background: $secondaryColor;
+        color: $primaryColorText;
+      }
+    }
+  }
+}
