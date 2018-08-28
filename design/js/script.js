@@ -4071,3 +4071,18 @@ var fun1301 = function fun1301() {
 
 TextWindows[1301] = new Dz(html1301, js1301, win1301, fun1301);
 ////// End 13-01
+
+
+///// Begin 13-02
+var win1302 = '- \u043D\u0430\u043F\u0438\u0441\u0430\u0442\u044C css-\u0444\u0443\u043D\u043A\u0446\u0438\u044E \u0434\u043B\u044F \u043F\u043E\u0434\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u044F \u0448\u0440\u0438\u0444\u0442\u0430, \u0447\u0442\u043E\u0431 \u043C\u043E\u0436\u043D\u043E \u0431\u044B\u043B\u043E \u043D\u0435 \u043A\u043E\u043F\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0431\u043E\u043B\u044C\u0448\u0443\u044E \u0441\u0442\u0440\u0430\u0448\u043D\u0443\u044E \u043A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0446\u0438\u044E, \u0430 \u043F\u0438\u0441\u0430\u0442\u044C \u0442\u0430\u043A:<br>\n$name = "Proxima Nova"<br>\n$path = "fonts/proxima/"<br>\nfont($name, $path, "Proxima")<br>\nfont($name, $path, "ProximaBold", "bold")<br>\nfont($name, $path, "ProximaBoldItalic", "bold", "italic")<br>';
+
+var js1302 = '// =============================================================================\n' + '// String Replace\n' + '// =============================================================================\n' + '\n' + '@function str-replace($string, $search, $replace: "") {\n' + '  $index: str-index($string, $search);\n' + '\n' + '  @if $index {\n' + '    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);\n' + '  }\n' + '\n' + '  @return $string;\n' + '}\n' + '\n' + '// =============================================================================\n' + '// Font Face\n' + '// =============================================================================\n' + '\n' + '@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {\n' + '  $src: null;\n' + '\n' + '  $extmods: (\n' + '          eot: "?",\n' + '          svg: "#" + str-replace($name, " ", "_")\n' + '  );\n' + '\n' + '  $formats: (\n' + '          otf: "opentype",\n' + '          ttf: "truetype"\n' + '  );\n' + '\n' + '  @each $ext in $exts {\n' + '    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);\n' + '    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);\n' + '    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);\n' + '  }\n' + '\n' + '  @font-face {\n' + '    font-family: quote($name);\n' + '    font-style: $style;\n' + '    font-weight: $weight;\n' + '    src: $src;\n' + '  }\n' + '}';
+
+var html1302 = '';
+
+var fun1302 = function fun1302() {
+    elWin.innerHTML = '';
+};
+
+TextWindows[1302] = new Dz(html1302, js1302, win1302, fun1302);
+////// End 13-02
