@@ -1,0 +1,33 @@
+$iconBackground: #6b96ad;
+$iconSpitit:"../img/icon.png";
+$maxCalum : 9;
+$i: 0;
+$widthBoth: -42.52;
+.icon{
+  background: $iconBackground;
+  background-image: url($iconSpitit);
+  width: 42.52px;
+  height: 42.52px;
+}
+
+@while $maxCalum>0 {
+  .icon-#{$i} {
+    background-position: $widthBoth+px 0px;
+  }
+  .icon-#{$i + 9} {
+    background-position: $widthBoth+px #{-42.52}px;
+  }
+  .icon-#{$i + 18} {
+    background-position: $widthBoth+px #{-85.04}px;
+  }
+  .icon-#{$i + 27} {
+    background-position: $widthBoth+px #{-127.56}px;
+  }
+  .icon-#{$i + 36} {
+    background-position: $widthBoth+px #{-170.08}px;
+  }
+  $maxCalum: $maxCalum - 1;
+  $i: $i + 1;
+  $widthBoth: $widthBoth - 42.52;
+}
+
