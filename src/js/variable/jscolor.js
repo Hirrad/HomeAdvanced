@@ -15,7 +15,7 @@ var colorJS=document.querySelector('[data-jscolor]');
 
 
 colorJS.addEventListener('click', (e) => {
-    log(e.target);
+    // log(e.target);
     if (!window.jscolor) {
         window.jscolor = (function () {
             //

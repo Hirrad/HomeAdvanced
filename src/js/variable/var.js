@@ -12,7 +12,7 @@ el =document.querySelector('.menu__first-level').parentElement.children[1];
 // elJs=document.querySelector('.conteinerWin__flex__js');
 elJs=document.querySelector('.conteinerWin__flex__js > pre > code');
 // elHtml=document.querySelector('.conteinerWin__flex__html');
-elHtml=document.querySelector('body > section > main > div > section.conteinerWin__flex__html > pre > code');
+elHtml=document.querySelector('.conteinerWin__flex__html > pre > code');
 elWin=document.querySelector('.conteinerWin__text');
 elTask=document.querySelector('.conteinerWin__task');
 

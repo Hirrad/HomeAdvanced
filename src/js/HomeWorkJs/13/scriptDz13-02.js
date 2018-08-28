@@ -6,50 +6,50 @@ font($name, $path, "Proxima")<br>
 font($name, $path, "ProximaBold", "bold")<br>
 font($name, $path, "ProximaBoldItalic", "bold", "italic")<br>`;
 
-let js1302='// =============================================================================\n' +
-    '// String Replace\n' +
-    '// =============================================================================\n' +
-    '\n' +
-    '@function str-replace($string, $search, $replace: "") {\n' +
-    '  $index: str-index($string, $search);\n' +
-    '\n' +
-    '  @if $index {\n' +
-    '    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);\n' +
-    '  }\n' +
-    '\n' +
-    '  @return $string;\n' +
-    '}\n' +
-    '\n' +
-    '// =============================================================================\n' +
-    '// Font Face\n' +
-    '// =============================================================================\n' +
-    '\n' +
-    '@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {\n' +
-    '  $src: null;\n' +
-    '\n' +
-    '  $extmods: (\n' +
-    '          eot: "?",\n' +
-    '          svg: "#" + str-replace($name, " ", "_")\n' +
-    '  );\n' +
-    '\n' +
-    '  $formats: (\n' +
-    '          otf: "opentype",\n' +
-    '          ttf: "truetype"\n' +
-    '  );\n' +
-    '\n' +
-    '  @each $ext in $exts {\n' +
-    '    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);\n' +
-    '    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);\n' +
-    '    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);\n' +
-    '  }\n' +
-    '\n' +
-    '  @font-face {\n' +
-    '    font-family: quote($name);\n' +
-    '    font-style: $style;\n' +
-    '    font-weight: $weight;\n' +
-    '    src: $src;\n' +
-    '  }\n' +
-    '}';
+let js1302=`// =============================================================================
+// String Replace
+// =============================================================================
+
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+// =============================================================================
+// Font Face
+// =============================================================================
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+  $src: null;
+
+  $extmods: (
+          eot: "?",
+          svg: "#" + str-replace($name, " ", "_")
+  );
+
+  $formats: (
+          otf: "opentype",
+          ttf: "truetype"
+  );
+
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}`;
 
 let html1302='';
 
