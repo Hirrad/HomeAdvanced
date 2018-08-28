@@ -11,11 +11,11 @@
  */
 
 
-var colorJS=document.querySelector('body > section > header > div > nav > ul > li > ul > li:nth-child(6) > ul > li > a');
+var colorJS=document.querySelector('[data-jscolor]');
 
 
 colorJS.addEventListener('click', (e) => {
-    log(45);
+    log(e.target);
     if (!window.jscolor) {
         window.jscolor = (function () {
             //

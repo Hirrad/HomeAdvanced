@@ -22,8 +22,3 @@ let fun401 = function(){
 
 TextWindows[401]=new Dz(html401,js401,win401,fun401);
 ////// End 4-01
-
-
-
-
-
