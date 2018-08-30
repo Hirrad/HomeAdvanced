@@ -21,5 +21,7 @@ elJs.innerHTML = jsText;
 elHtml.innerHTML = htmlText;
 // elWin.innerHTML = winText;
 elTask.innerHTML=winTask;
+
+
 //
 /////////////////////End of variables

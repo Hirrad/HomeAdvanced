@@ -8,27 +8,30 @@ const gulp = require('gulp'),
     newer = require('gulp-newer'),
     autoprefixer = require('gulp-autoprefixer'),
     // connect = require('gulp-connect-php'),
-    PATH = {
-        src: {
-            jsN: './design/jsNoCancat/*.js',
-            js: './src/js/**/*.js',
-            css: './src/scss/*.scss',
-            html: './src/*.html',
-            img: './src/img/*'
-        },
-        dest: {
-            js: './design/js',
-            css: './design/css/',
-            html: './design/',
-            img: './design/img/'
-        },
-        watch: {
-            js: './src/js/**/*.js',
-            css: ['./src/scss/*.scss', './src/scss/**/*.scss'],
-            html: './src/*.html',
-            img: './src/img/*.*'
-        }
-    };
+    $ = require('jQuery');
+
+PATH = {
+    src: {
+        jsN: './design/jsNoCancat/*.js',
+        js: './src/js/**/*.js',
+        css: './src/scss/*.scss',
+        html: './src/*.html',
+        img: './src/img/*'
+    },
+    dest: {
+        js: './design/js',
+        css: './design/css/',
+        html: './design/',
+        img: './design/img/'
+    },
+    watch: {
+        js: './src/js/**/*.js',
+        css: ['./src/scss/*.scss', './src/scss/**/*.scss'],
+        html: './src/*.html',
+        img: './src/img/*.*'
+    }
+};
+
 gulp.task('img', () => {
     gulp.src(PATH.src.img)
         .pipe(newer(PATH.dest.img))
@@ -66,7 +69,7 @@ gulp.task('css', () => {
 });
 
 gulp.task('js', () => {
-    gulp.src(['./src/js/variable/var.js','./src/js/variable/object.js',PATH.src.js,'./src/js/variable/prism.js','./src/js/variable/jscolor.js','./src/js/variable/Event.js'])
+    gulp.src(['./src/js/variable/var.js', './src/js/variable/object.js', PATH.src.js, './src/js/variable/prism.js', './src/js/variable/jscolor.js', './src/js/variable/Event.js'])
 
         .pipe(newer(PATH.dest.js))
         .pipe(gulpConcat('script.js'))
