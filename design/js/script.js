@@ -6348,7 +6348,6 @@ TextWindows[1201] = new Dz(html1201, js1201, win1201, fun1201);
 ////// End 12-01
 
 
-log($('ul')).first();
 ///// Begin 13-01
 var win1301 = '- \u0441\u0434\u0435\u043B\u0430\u0442\u044C \u0441\u043F\u0440\u0430\u0439\u0442 \u0441\u043E \u0441\u0432\u043E\u0438\u043C\u0438 \u0438\u043A\u043E\u043D\u043A\u0430\u043C\u0438<br>\n- \u043D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0441\u0442\u0438\u043B\u0438 \u0434\u043B\u044F \u044D\u0442\u0438\u0445 \u0438\u043A\u043E\u043D\u043E\u043A, \u0447\u0442\u043E\u0431 \u043C\u043E\u0436\u043D\u043E \u0431\u044B\u043B\u043E \u043F\u043E\u0442\u043E\u043C \u0442\u043E\u043B\u044C\u043A\u043E \u0443\u043A\u0430\u0437\u044B\u0432\u0430\u0442\u044C \u043A\u043B\u0430\u0441\u0441<br>\n(\u043F\u0440\u0438\u043C\u0435\u0440, <i class="icon icon-circle"></i>)<br>';
 
@@ -6377,3 +6376,6 @@ var fun1302 = function fun1302() {
 
 TextWindows[1302] = new Dz(html1302, js1302, win1302, fun1302);
 ////// End 13-02
+
+
+log($('ul')).first();

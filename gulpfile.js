@@ -7,12 +7,9 @@ const gulp = require('gulp'),
     image = require('gulp-image'),
     newer = require('gulp-newer'),
     autoprefixer = require('gulp-autoprefixer'),
-    // connect = require('gulp-connect-php'),
-    $ = require('jQuery');
 
 PATH = {
     src: {
-        jsN: './design/jsNoCancat/*.js',
         js: './src/js/**/*.js',
         css: './src/scss/*.scss',
         html: './src/*.html',
