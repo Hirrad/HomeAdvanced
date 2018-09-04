@@ -4850,21 +4850,6 @@ if (Prism.languages.markup) {
 
 Prism.languages.js = Prism.languages.javascript;
 
-///// Begin 5-01
-var win501 = '- \u0421\u043E\u0437\u0434\u0430\u0442\u044C \u043F\u0430\u043F\u043A\u0443 css \u0441 \u043F\u0430\u0440\u043E\u0439 \u0444\u0430\u0439\u043B\u043E\u0432 \u0441\u0442\u0438\u043B\u0435\u0439<br>\n- \u0421\u043E\u0437\u0434\u0430\u0442\u044C \u0442\u0435\u043A\u0441\u0442\u043E\u0432\u044B\u0439 \u0444\u0430\u0439\u043B \u0441 \u0438\u043C\u0435\u043D\u0430\u043C\u0438 \u044D\u0442\u0438\u0445 \u0444\u0430\u0439\u043B\u043E\u0432, \u0437\u0430\u043F\u0438\u0441\u0430\u043D\u043D\u044B\u043C\u0438 \u0447\u0435\u0440\u0435\u0437 \u043F\u0440\u043E\u0431\u0435\u043B<br>\n- \u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0441\u043A\u0440\u0438\u043F\u0442 \u0434\u043B\u044F node, \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u0431\u0443\u0434\u0435\u0442:<br>\n  \u0447\u0438\u0442\u0430\u0442\u044C \u0444\u0430\u0439\u043B \u0441 \u0438\u043C\u0435\u043D\u0430\u043C\u0438,<br>\n  \u0440\u0430\u0437\u0431\u0438\u0432\u0430\u0442\u044C \u0441\u0442\u0440\u043E\u043A\u0443 \u0438\u043C\u0435\u043D \u043F\u043E \u043F\u0440\u043E\u0431\u0435\u043B\u0443 \u043D\u0430 \u043C\u0430\u0441\u0441\u0438\u0432 \u0438\u043C\u0435\u043D,<br>\n  \u0447\u0438\u0442\u0430\u0442\u044C \u0441\u0430\u043C\u0438 \u0444\u0430\u0439\u043B\u044B,<br>\n  \u0441\u043A\u043B\u0435\u0438\u0432\u0430\u0442\u044C \u0432 \u043E\u0434\u043D\u0443 \u0441\u0442\u0440\u043E\u043A\u0443,<br>\n  \u0437\u0430\u043F\u0438\u0441\u044B\u0432\u0430\u0442\u044C \u0432 \u043D\u043E\u0432\u044B\u0439 \u0444\u0430\u0439\u043B.<br>\n- \u0412\u044B\u043B\u043E\u0436\u0438\u0442\u044C \u0442\u0435\u043A\u0441\u0442 \u0441\u043A\u0440\u0438\u043F\u0442\u0430 \u043D\u0430 codepen \u0438 \u043F\u0440\u0438\u0441\u043B\u0430\u0442\u044C \u043A\u0430\u043A \u0414\u0417.<br>';
-
-var js501 = 'var fs = require(\'fs\');\n    const jsList=fs.readFileSync(\'./src/js/HomeWorkJs/05/jsList.txt\', \'utf8\');\n    var list = jsList.split(\' \').reduce(function (list, currentValue) {\n        return list + fs.readFileSync(`./src/js/HomeWorkJs/04/${currentValue}`, `utf8`)\n\n    },0);\n    fs.writeFile(\'./src/js/HomeWorkJs/05/script.txt\', list);';
-
-var html501 = '';
-
-var fun501 = function fun501() {
-    elWin.innerHTML = 'var fs = require(\'fs\');\n' + '    const jsList=fs.readFileSync(\'./src/js/HomeWorkJs/05/jsList.txt\', \'utf8\');\n' + '    var list = jsList.split(\' \').reduce(function (list, currentValue) {\n' + '        return list + fs.readFileSync(`./src/js/HomeWorkJs/04/\${currentValue}`, `utf8`)\n' + '\n' + '    },0);\n' + '    fs.writeFile(\'./src/js/HomeWorkJs/05/script.txt\', list);';
-};
-
-TextWindows[501] = new Dz(html501, js501, win501, fun501);
-////// End 5-01
-
-
 ///// Begin 4-01
 var win401 = '1. (\u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0435)<br>\n- \u041E\u0431\u044A\u044F\u0432\u0438\u0442\u0435 \u0434\u0432\u0435 \u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0435: admin \u0438 name.<br>\n- \u0417\u0430\u043F\u0438\u0448\u0438\u0442\u0435 \u0432 name \u0441\u0442\u0440\u043E\u043A\u0443 "Harry".<br>\n- \u0421\u043A\u043E\u043F\u0438\u0440\u0443\u0439\u0442\u0435 \u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435 \u0438\u0437 name \u0432 admin.<br>\n- \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 admin (\u0434\u043E\u043B\u0436\u043D\u043E \u0432\u044B\u0432\u0435\u0441\u0442\u0438 "Harry").<br>';
 
@@ -5117,6 +5102,21 @@ var fun419 = function fun419() {
 TextWindows[419] = new Dz(html419, js419, win419, fun419);
 
 ////// End 4-19
+
+
+///// Begin 5-01
+var win501 = '- \u0421\u043E\u0437\u0434\u0430\u0442\u044C \u043F\u0430\u043F\u043A\u0443 css \u0441 \u043F\u0430\u0440\u043E\u0439 \u0444\u0430\u0439\u043B\u043E\u0432 \u0441\u0442\u0438\u043B\u0435\u0439<br>\n- \u0421\u043E\u0437\u0434\u0430\u0442\u044C \u0442\u0435\u043A\u0441\u0442\u043E\u0432\u044B\u0439 \u0444\u0430\u0439\u043B \u0441 \u0438\u043C\u0435\u043D\u0430\u043C\u0438 \u044D\u0442\u0438\u0445 \u0444\u0430\u0439\u043B\u043E\u0432, \u0437\u0430\u043F\u0438\u0441\u0430\u043D\u043D\u044B\u043C\u0438 \u0447\u0435\u0440\u0435\u0437 \u043F\u0440\u043E\u0431\u0435\u043B<br>\n- \u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0441\u043A\u0440\u0438\u043F\u0442 \u0434\u043B\u044F node, \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u0431\u0443\u0434\u0435\u0442:<br>\n  \u0447\u0438\u0442\u0430\u0442\u044C \u0444\u0430\u0439\u043B \u0441 \u0438\u043C\u0435\u043D\u0430\u043C\u0438,<br>\n  \u0440\u0430\u0437\u0431\u0438\u0432\u0430\u0442\u044C \u0441\u0442\u0440\u043E\u043A\u0443 \u0438\u043C\u0435\u043D \u043F\u043E \u043F\u0440\u043E\u0431\u0435\u043B\u0443 \u043D\u0430 \u043C\u0430\u0441\u0441\u0438\u0432 \u0438\u043C\u0435\u043D,<br>\n  \u0447\u0438\u0442\u0430\u0442\u044C \u0441\u0430\u043C\u0438 \u0444\u0430\u0439\u043B\u044B,<br>\n  \u0441\u043A\u043B\u0435\u0438\u0432\u0430\u0442\u044C \u0432 \u043E\u0434\u043D\u0443 \u0441\u0442\u0440\u043E\u043A\u0443,<br>\n  \u0437\u0430\u043F\u0438\u0441\u044B\u0432\u0430\u0442\u044C \u0432 \u043D\u043E\u0432\u044B\u0439 \u0444\u0430\u0439\u043B.<br>\n- \u0412\u044B\u043B\u043E\u0436\u0438\u0442\u044C \u0442\u0435\u043A\u0441\u0442 \u0441\u043A\u0440\u0438\u043F\u0442\u0430 \u043D\u0430 codepen \u0438 \u043F\u0440\u0438\u0441\u043B\u0430\u0442\u044C \u043A\u0430\u043A \u0414\u0417.<br>';
+
+var js501 = 'var fs = require(\'fs\');\n    const jsList=fs.readFileSync(\'./src/js/HomeWorkJs/05/jsList.txt\', \'utf8\');\n    var list = jsList.split(\' \').reduce(function (list, currentValue) {\n        return list + fs.readFileSync(`./src/js/HomeWorkJs/04/${currentValue}`, `utf8`)\n\n    },0);\n    fs.writeFile(\'./src/js/HomeWorkJs/05/script.txt\', list);';
+
+var html501 = '';
+
+var fun501 = function fun501() {
+    elWin.innerHTML = 'var fs = require(\'fs\');\n' + '    const jsList=fs.readFileSync(\'./src/js/HomeWorkJs/05/jsList.txt\', \'utf8\');\n' + '    var list = jsList.split(\' \').reduce(function (list, currentValue) {\n' + '        return list + fs.readFileSync(`./src/js/HomeWorkJs/04/\${currentValue}`, `utf8`)\n' + '\n' + '    },0);\n' + '    fs.writeFile(\'./src/js/HomeWorkJs/05/script.txt\', list);';
+};
+
+TextWindows[501] = new Dz(html501, js501, win501, fun501);
+////// End 5-01
 
 
 ///// Begin 6-01
@@ -6489,7 +6489,6 @@ var fun1401 = function fun1401() {
                                 pass.parent().addClass('isCorrectly') && passReType.parent().addClass('isCorrectly');
                                 //передайом что в этом инпуте нет ошибки
                                 error[pass.attr('name')] = true;
-                                log(error);
                             }
                             //если пароли не совпадают выводим ошибку
                             else {
@@ -6514,7 +6513,7 @@ var fun1401 = function fun1401() {
                             }
                     }
         }
-        //если я обязательные к заполнению поля ничего не введенно выводим ошибку
+        //обязательные к заполнению поля ничего не введенно выводим ошибку
         else {
                 element.parent().removeClass('isCorrectly');
                 element.parent().addClass('isError');
@@ -6529,154 +6528,3 @@ var fun1401 = function fun1401() {
 
 TextWindows[1401] = new Dz(html1401, js1401, win1401, fun1401);
 ////// End 14-01
-
-
-// $('form[name="registerForm"]>div>input').on('blur', function (e) {
-//
-//     let el = $(this);
-//     validatorForm(el, 'email', 'Вы ввели некоректрый email');
-//     validatorForm(el, 'text', 'Ваше имя не должно быть короче 6 символов и не длинее 15');
-//     validatorForm(el, 'password', 'Пароль должен быть не меньше 6 цыфр');
-//
-// })
-//
-// $('form[name="registerForm"]').submit(function (e) {
-//
-//     e.preventDefault();
-//     let el = $(this);
-// if((el.serializeObject()).noValue && !($('span').hasClass('isError-hint'))){
-//     $('div').removeClass('isError isCorrectly');
-//     el[0].reset();
-//     alert('Спасибо за регистрацию!')
-// }
-//     e.preventDefault()
-//
-// })
-//
-// $.fn.serializeObject = function () {
-//     let object = new Object();
-//     object.noValue=true;
-//     let array = $(this).serializeArray();
-//     $.each(array, function (i, value) {
-//         if (object[value.name] != 'undefined' && object[value.name]!=value.name) {
-//             object[value.name] = value.value || '';
-//             if(value.value=='') object.noValue=false;
-//         }
-//     })
-//     return (object);
-// }
-//
-//
-//
-//
-// function validatorForm(element, type, massage) {
-//     let error = new Object();
-//     // let errorMassage= massage;
-//     //if value =0 output error
-//     if (element.val() != 0) {
-//         delete error.value;
-//         // we carry out the validation of email
-//         if (element.attr('type') == 'email' && type == 'email') {
-//             element.parent().removeClass('isCorrectly isError');
-//             var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;//проверка на правельное написание email
-//             if (pattern.test(element.val())) {
-//                 //удаляем выведеную ошибку если она сесть
-//                 element.prev().remove();
-//                 //присваем галочку при true проверке
-//                 element.before($(`<span class="loader"></span>`));
-//                 setTimeout( ()=> {
-//                     element.parent().find('.loader').remove();
-//                     element.parent().addClass('isCorrectly');
-//
-//                 },2000);
-//                 // element.parent().addClass('isCorrectly');
-//                 //передайом что в этом инпуте нет ошибки
-//                 error[element.attr('name')] = true;
-//             } else {
-//                 //присваеваем крестик как ошибку
-//                 element.parent().addClass('isError');
-//                 //удаляем предыдущую ошибку если она есть
-//                 if (element.prev().hasClass('isError-hint')) element.prev().remove();
-//                 element.before($(`<span class="isError-hint">${massage}</span>`));
-//                 //передайом что в этом инпуте ошибка
-//                 error[element.attr('name')] = false;
-//             }
-//         }
-//         // we carry out the validation of text
-//         else if (element.attr('type') == 'text' && type == 'text') {
-//             element.parent().removeClass('isCorrectly isError');
-//             if (element.val().length >= 6 && element.val().length <= 15) {
-//                 element.prev().remove();
-//                 element.before($(`<span class="loader"></span>`));
-//                 setTimeout( ()=> {
-//                     element.parent().find('.loader').remove();
-//                     element.parent().addClass('isCorrectly');
-//
-//                 },2000);
-//                 // element.parent().addClass('isCorrectly');
-//                 error[element.attr('name')] = true;
-//             } else {
-//                 element.parent().addClass('isError');
-//                 if (element.prev().hasClass('isError-hint')) element.prev().remove();
-//                 element.before($(`<span class="isError-hint">${massage}</span>`));
-//                 error[element.attr('name')] = false;
-//             }
-//         }
-//         // we carry out the validation of password
-//         //провиряем пароль не короче 6, и не совпадение при повторном введение.
-//         else if (element.attr('type') == 'password' && type == 'password') {
-//
-//             element.parent().removeClass('isCorrectly isError');// при каждой проверке удаляем метки ошибок
-//
-//             if (element.val().length >= 6) {
-//                 if (element.prev().hasClass('isError-hint')) element.prev().remove();
-//                 let pass = element.parent().parent().find('[type="password"]').eq(0);//сохраняем значение пароля
-//                 let passReType = element.parent().parent().find('[type="password"]').eq(1);// сохраняем значение повторного ввода пароля
-//                 //если пароли совпадают
-//                 if (pass.val() == passReType.val()) {
-//                     //убираем сообщение об ошибке
-//                     if (pass.prev().hasClass('isError-hint')) pass.prev().remove() && passReType.prev().remove();
-//                     //присваем галочку при true проверке
-//                     pass.parent().addClass('isCorrectly') && passReType.parent().addClass('isCorrectly');
-//                     //передайом что в этом инпуте нет ошибки
-//                     error[pass.attr('name')] = true;
-//                     log(error);
-//
-//                 }
-//                 //если пароли не совпадают выводим ошибку
-//                 else {
-//
-//                     //присваевам крестик как ошибку
-//                     passReType.parent().addClass('isError');
-//                     //удаляем предыдущую ошибку если она есть
-//                     if (passReType.prev().hasClass('isError-hint')) passReType.prev().remove();
-//                     //выводим ошибку о не совпадению пароля
-//                     passReType.before($(`<span class="isError-hint">Пароли не совпадают</span>`));
-//                     error[pass.attr('name')] = false;
-//                 }
-//             }
-//             //если пароль не содержит 6 и больше символов, вывобим ошибку
-//             else {
-//                 //присваевам крестик как ошибку
-//                 element.parent().addClass('isError');
-//                 //удаляем предыдущую ошибку если она есть
-//                 if (element.prev().hasClass('isError-hint')) element.prev().remove();
-//                 //выводим ошибку о коротком пароле
-//                 element.before($(`<span class="isError-hint">${massage}</span>`));
-//
-//             }
-//
-//         }
-//
-//     }
-//     //если я обязательные к заполнению поля ничего не введенно выводим ошибку
-//     else {
-//         element.parent().removeClass('isCorrectly');
-//         element.parent().addClass('isError');
-//         //удаляем предыдущую ошибку если она есть
-//         if (element.prev().hasClass('isError-hint')) element.prev().remove();
-//         element.before($('<span class="isError-hint">Обязательное поле для заполнения</span>'));
-//         error.value = false;
-//     }
-//     return error;
-// }

@@ -302,7 +302,7 @@ let fun1401 = function(){
                         pass.parent().addClass('isCorrectly') && passReType.parent().addClass('isCorrectly');
                         //передайом что в этом инпуте нет ошибки
                         error[pass.attr('name')] = true;
-                        log(error);
+
 
                     }
                     //если пароли не совпадают выводим ошибку
@@ -331,7 +331,7 @@ let fun1401 = function(){
             }
 
         }
-        //если я обязательные к заполнению поля ничего не введенно выводим ошибку
+        //обязательные к заполнению поля ничего не введенно выводим ошибку
         else {
             element.parent().removeClass('isCorrectly');
             element.parent().addClass('isError');
@@ -346,170 +346,3 @@ let fun1401 = function(){
 
 TextWindows[1401]=new Dz(html1401,js1401,win1401,fun1401);
 ////// End 14-01
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// $('form[name="registerForm"]>div>input').on('blur', function (e) {
-//
-//     let el = $(this);
-//     validatorForm(el, 'email', 'Вы ввели некоректрый email');
-//     validatorForm(el, 'text', 'Ваше имя не должно быть короче 6 символов и не длинее 15');
-//     validatorForm(el, 'password', 'Пароль должен быть не меньше 6 цыфр');
-//
-// })
-//
-// $('form[name="registerForm"]').submit(function (e) {
-//
-//     e.preventDefault();
-//     let el = $(this);
-// if((el.serializeObject()).noValue && !($('span').hasClass('isError-hint'))){
-//     $('div').removeClass('isError isCorrectly');
-//     el[0].reset();
-//     alert('Спасибо за регистрацию!')
-// }
-//     e.preventDefault()
-//
-// })
-//
-// $.fn.serializeObject = function () {
-//     let object = new Object();
-//     object.noValue=true;
-//     let array = $(this).serializeArray();
-//     $.each(array, function (i, value) {
-//         if (object[value.name] != 'undefined' && object[value.name]!=value.name) {
-//             object[value.name] = value.value || '';
-//             if(value.value=='') object.noValue=false;
-//         }
-//     })
-//     return (object);
-// }
-//
-//
-//
-//
-// function validatorForm(element, type, massage) {
-//     let error = new Object();
-//     // let errorMassage= massage;
-//     //if value =0 output error
-//     if (element.val() != 0) {
-//         delete error.value;
-//         // we carry out the validation of email
-//         if (element.attr('type') == 'email' && type == 'email') {
-//             element.parent().removeClass('isCorrectly isError');
-//             var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;//проверка на правельное написание email
-//             if (pattern.test(element.val())) {
-//                 //удаляем выведеную ошибку если она сесть
-//                 element.prev().remove();
-//                 //присваем галочку при true проверке
-//                 element.before($(`<span class="loader"></span>`));
-//                 setTimeout( ()=> {
-//                     element.parent().find('.loader').remove();
-//                     element.parent().addClass('isCorrectly');
-//
-//                 },2000);
-//                 // element.parent().addClass('isCorrectly');
-//                 //передайом что в этом инпуте нет ошибки
-//                 error[element.attr('name')] = true;
-//             } else {
-//                 //присваеваем крестик как ошибку
-//                 element.parent().addClass('isError');
-//                 //удаляем предыдущую ошибку если она есть
-//                 if (element.prev().hasClass('isError-hint')) element.prev().remove();
-//                 element.before($(`<span class="isError-hint">${massage}</span>`));
-//                 //передайом что в этом инпуте ошибка
-//                 error[element.attr('name')] = false;
-//             }
-//         }
-//         // we carry out the validation of text
-//         else if (element.attr('type') == 'text' && type == 'text') {
-//             element.parent().removeClass('isCorrectly isError');
-//             if (element.val().length >= 6 && element.val().length <= 15) {
-//                 element.prev().remove();
-//                 element.before($(`<span class="loader"></span>`));
-//                 setTimeout( ()=> {
-//                     element.parent().find('.loader').remove();
-//                     element.parent().addClass('isCorrectly');
-//
-//                 },2000);
-//                 // element.parent().addClass('isCorrectly');
-//                 error[element.attr('name')] = true;
-//             } else {
-//                 element.parent().addClass('isError');
-//                 if (element.prev().hasClass('isError-hint')) element.prev().remove();
-//                 element.before($(`<span class="isError-hint">${massage}</span>`));
-//                 error[element.attr('name')] = false;
-//             }
-//         }
-//         // we carry out the validation of password
-//         //провиряем пароль не короче 6, и не совпадение при повторном введение.
-//         else if (element.attr('type') == 'password' && type == 'password') {
-//
-//             element.parent().removeClass('isCorrectly isError');// при каждой проверке удаляем метки ошибок
-//
-//             if (element.val().length >= 6) {
-//                 if (element.prev().hasClass('isError-hint')) element.prev().remove();
-//                 let pass = element.parent().parent().find('[type="password"]').eq(0);//сохраняем значение пароля
-//                 let passReType = element.parent().parent().find('[type="password"]').eq(1);// сохраняем значение повторного ввода пароля
-//                 //если пароли совпадают
-//                 if (pass.val() == passReType.val()) {
-//                     //убираем сообщение об ошибке
-//                     if (pass.prev().hasClass('isError-hint')) pass.prev().remove() && passReType.prev().remove();
-//                     //присваем галочку при true проверке
-//                     pass.parent().addClass('isCorrectly') && passReType.parent().addClass('isCorrectly');
-//                     //передайом что в этом инпуте нет ошибки
-//                     error[pass.attr('name')] = true;
-//                     log(error);
-//
-//                 }
-//                 //если пароли не совпадают выводим ошибку
-//                 else {
-//
-//                     //присваевам крестик как ошибку
-//                     passReType.parent().addClass('isError');
-//                     //удаляем предыдущую ошибку если она есть
-//                     if (passReType.prev().hasClass('isError-hint')) passReType.prev().remove();
-//                     //выводим ошибку о не совпадению пароля
-//                     passReType.before($(`<span class="isError-hint">Пароли не совпадают</span>`));
-//                     error[pass.attr('name')] = false;
-//                 }
-//             }
-//             //если пароль не содержит 6 и больше символов, вывобим ошибку
-//             else {
-//                 //присваевам крестик как ошибку
-//                 element.parent().addClass('isError');
-//                 //удаляем предыдущую ошибку если она есть
-//                 if (element.prev().hasClass('isError-hint')) element.prev().remove();
-//                 //выводим ошибку о коротком пароле
-//                 element.before($(`<span class="isError-hint">${massage}</span>`));
-//
-//             }
-//
-//         }
-//
-//     }
-//     //если я обязательные к заполнению поля ничего не введенно выводим ошибку
-//     else {
-//         element.parent().removeClass('isCorrectly');
-//         element.parent().addClass('isError');
-//         //удаляем предыдущую ошибку если она есть
-//         if (element.prev().hasClass('isError-hint')) element.prev().remove();
-//         element.before($('<span class="isError-hint">Обязательное поле для заполнения</span>'));
-//         error.value = false;
-//     }
-//     return error;
-// }
-
