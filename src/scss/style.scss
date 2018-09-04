@@ -1,6 +1,8 @@
 //Var
 @import "./var/var";
 @import "./var/mixin";
+@import "./var/loader";
+
 ///////Base
 @import "normalize";
 
@@ -15,6 +17,8 @@
 @import "box/two-block_10-01";
 @import "box/infoNoImageBlock";
 @import "box/errorSizeImg";
+@import "box/FormRegistred";
+
 
 //Layout
 @import "./Layout/checkbox";
@@ -23,7 +27,7 @@
 @import "./Layout/jscolor";
 @import "./Layout/inputImageMultiple";
 @import "./Layout/flex";
-
+@import "./layout/validatorForm";
 
 
 

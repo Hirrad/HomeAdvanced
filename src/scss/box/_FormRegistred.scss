@@ -1,0 +1,124 @@
+:root {
+  /* Colors */
+  --primaryColor: #0166ff;
+  --secondaryColor: white;
+  --textColor: rgba(152, 152, 152, 1);
+  --headlineColor: var(--secondaryColor);
+}
+
+.content {
+  position: relative;
+  margin: 100px auto;
+  display: flex;
+  width: 680px;
+  height: 480px;
+  box-shadow:-5px 5px #cfcbc5;
+  &:after{
+    top: 0px;
+    left: -5px;
+    content: '';
+    height: 5px;
+    width: 101.5%;
+    background:  #cfcbc5;
+    position: absolute;
+  }
+}
+.login {
+  width: 340px;
+
+
+  background-color: var(--secondaryColor);
+  box-shadow:-5px 5px #cfcbc5;
+
+}
+.register {
+  width: 340px;
+  background-color: var(--primaryColor);
+  box-shadow:5px 5px #cfcbc5;
+}
+.register_account{
+  font-size: 24px;
+  color: var(--secondaryColor);
+  text-align: center;
+  margin: 30px auto;
+}
+.register_account {
+  margin:15px auto;
+}
+.form input{
+  margin: 15px auto;
+
+}
+.register {
+  & input {
+    text-indent: 20px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #0f0f0f;
+    display: block;
+    height: 45px;
+    width: 260px;
+    margin: 20px auto;
+    position: relative;
+
+  }
+
+}
+
+.login_form{
+  & input {
+    text-indent: 20px;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--textColor);
+    display: block;
+    height: 45px;
+    width: 260px;
+    margin: 20px auto;
+    position: relative;
+  }
+}
+.ButtonRegister {
+  all: initial;
+  text-align: center;
+  color: var( --secondaryColor);
+  display: block;
+  background: #4c79ff;
+  border: 0;
+  height: 45px;
+  width: 266px
+}
+.login_img {
+  margin: 38px 0 0 -5px;
+
+  background-image: url(../img/login.png);
+  height: 105px;
+  width: 285px;
+  color: var(--secondaryColor);
+  line-height: 100px;
+  text-align: center;
+  font-size: 24px;
+
+}
+
+.ButtonLogin {
+  all: initial;
+  text-align: center;
+  color: var( --secondaryColor);
+  display: block;
+  background: var(--primaryColor);
+  border: 0;
+  height: 45px;
+  width: 266px
+}
+.login_footer {
+  color: var(--textColor);
+  font-size: 10px;
+  font-weight: 600;
+  text-align: center;
+}
+.login_footer a {
+  text-decoration: none;
+
+  color: #3366ff;
+}

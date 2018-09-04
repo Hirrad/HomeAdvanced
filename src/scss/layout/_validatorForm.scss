@@ -1,0 +1,88 @@
+.isError {
+  & {
+    position: relative;
+  }
+  &:after {
+    position: absolute;
+    font-weight: bold;
+    color: red;
+    content: 'X';
+    top: 5px;
+    right: 45px;
+  }
+
+  &-hint {
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    top: 0px;
+    right: 95%;
+    z-index: 66;
+    width: 80%;
+    height: 100%;
+    color: #f9f9f9;
+    padding: 7px 0;
+    background: rgba(255, 50, 66, 0.95);
+    border: 1px rgba(156, 156, 156, 0.88) solid;
+    border-radius: 5px;
+    box-sizing: border-box;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 30%;
+      right: -15px;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-left: 15px solid rgba(255, 50, 66, 0.95);
+      border-bottom: 10px solid transparent;
+
+      z-index: 88;
+    }
+    //position: absolute;
+    //&::before {
+    //  -webkit-box-sizing: border-box;
+    //  -moz-box-sizing: border-box;
+    //  box-sizing: border-box;
+    //  padding: 5px;
+    //  content: 'dsfdfdsfsfsd5';
+    //  position: absolute;
+    //  top: 0;
+    //  left: -80%;
+    //  width: 80%;
+    //  height: 100%;
+    //  background: #fff;
+    //  border: 1px #0f0f0f solid;
+    //  border-radius: 5px;
+    //}
+  }
+
+}
+
+.isCorrectly {
+  & {
+    position: relative;
+  }
+  &:after {
+    position: absolute;
+    font-weight: bold;
+    color: green;
+    content: '\2714';
+    top: 5px;
+    right: 45px;
+
+  }
+
+}
+
+.loader {
+  position: absolute;
+  top: 5px;
+  right: 45px;
+  z-index: 66;
+
+}
+
+form > div {
+  position: relative;
+}
