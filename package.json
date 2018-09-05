@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "gulpfile.js",
   "dependencies": {
+    "bxslider": "^4.2.14",
     "gulp-connect": "^5.6.1"
   },
   "devDependencies": {
