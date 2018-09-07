@@ -87,9 +87,81 @@ menuFirstLevel.addEventListener('mouseover', function () {
 });
 
 ///////////////////// end of events
+//вывод в консоль
 var log = function log(el) {
     return console.log(el);
 };
+//конец вывода в консоль
+
+
+//для рисования сетки canvas
+function eventWindowLoaded() {
+    canvasApp(); //包含整个Canvas应用程序
+}
+function canvasSupport(e) {
+
+    return !!e.getContext;
+}
+function canvasApp() {
+    var myCanvas = document.getElementById('smile');
+
+    if (!canvasSupport(myCanvas)) {
+        return;
+    }
+
+    var ctx = myCanvas.getContext('2d');
+
+    myCanvas.width = window.innerWidth;
+    myCanvas.height = window.innerHeight;
+
+    function drawScreen() {
+        // 横线与竖线的是距
+        var dx = 50;
+        var dy = 50;
+
+        // 初始坐标原点
+        var x = 0;
+        var y = 0;
+        var w = myCanvas.width;
+        var h = myCanvas.height;
+
+        // 单个步长所表示的长度
+
+        var xy = 10;
+
+        ctx.lineWidth = 1;
+
+        // 画横线
+        while (y < h) {
+            y = y + dy;
+            ctx.moveTo(x, y);
+            ctx.lineTo(w, y);
+            ctx.stroke();
+
+            //横坐标的数字
+            ctx.font = "1px Calibri";
+            ctx.fillText(xy, x, y);
+            xy += 10;
+        }
+
+        // 画竖线
+        y = 0;
+        xy = 10;
+        while (x < w) {
+            x = x + dx;
+            ctx.moveTo(x, y);
+            ctx.lineTo(x, h);
+            ctx.stroke();
+            //纵坐标的数字
+            ctx.font = "1px Calibri";
+            ctx.fillText(xy, x, 10);
+            xy += 10;
+        }
+    }
+
+    drawScreen();
+}
+///// конец рисования сетки для canvas
 /*! jQuery v3.3.1 | (c) JS Foundation and other contributors | jquery.org/license */
 !function (e, t) {
     "use strict";
@@ -8528,3 +8600,82 @@ var fun1502 = function fun1502() {
 
 TextWindows[1502] = new Dz(html1502, js1502, win1502, fun1502);
 ////// End 15-02
+
+
+///// Begin 16-01
+var win1601 = '\u0412\u044B\u0431\u0440\u0430\u0442\u044C \u043B\u044E\u0431\u043E\u0439 \u0441\u043C\u0430\u0439\u043B (\u043D\u0430\u043F\u0440\u0438\u043C\u0435\u0440 \u0438\u0437 \u0441\u043A\u0430\u0439\u043F\u0430 \u0438\u043B\u0438 \u0441\u043B\u044D\u043A\u0430) \u0438 \u043D\u0430\u0440\u0438\u0441\u043E\u0432\u0430\u0442\u044C \u0435\u0433\u043E \u043D\u0430 \u043A\u0430\u043D\u0432\u0430\u0441\u0435.\n\u041F\u043E \u043A\u043B\u0438\u043A\u0443/\u043D\u0430\u0432\u0435\u0434\u0435\u043D\u0438\u044E \u043D\u0430 \u0441\u043C\u0430\u0439\u043B (\u043D\u0435 \u043D\u0430 \u0432\u0435\u0441\u044C \u043A\u0430\u043D\u0432\u0430\u0441) \u043E\u043D \u0434\u043E\u043B\u0436\u0435\u043D \u043C\u043E\u0440\u0433\u0430\u0442\u044C.\n<br>';
+
+var js1601 = 'var x = 8;\n' + 'var ctx;\n' + 'clipSmail(false);//рисуем на canvas смайл без анимации\n' + 'function clipSmail(i = true) {\n' + '\n' + '    ctx = smile.getContext(\'2d\');\n' + '    ctx.clearRect(0, 0, smile.width, smile.height);\n' + '    smile.width = $(\'#smile\')[0].clientWidth;\n' + '    smile.height = $(\'#smile\')[0].clientHeight;\n' + '\n' + '    ctx.beginPath();\n' + '\n' + '    ctx.fillStyle = \'#FFE073\';\n' + '    ctx.arc(35, 35, 30, 0, Math.PI * 2, true); // Внешняя окружность\n' + '    ctx.fill();\n' + '    ctx.stroke();\n' + '    ctx.closePath();\n' + '\n' + '    ctx.beginPath();\n' + '    ctx.fillStyle = \'#fff\';\n' + '    ctx.moveTo(20, 45);\n' + '    ctx.arc(35, 45, 15, 0, Math.PI, false);  // рот (по часовой стрелке)\n' + '    ctx.moveTo(25, 20);\n' + '\n' + '    ctx.fill();\n' + '    ctx.stroke();\n' + '    ctx.closePath();\n' + '    ctx.lineWidth = 1;\n' + '\n' + '\n' + '    drawEllipse(ctx, [50, 25], [8, 5], Math.PI / 2, 10); //правый глаз\n' + '    drawEllipse(ctx, [20, 25], [1, 5], Math.PI / 2, 10);// левый зрачек\n' + '    if (x > 0 && x != 9 && i) {\n' + '        drawEllipse(ctx, [20, 25], [x, 5], Math.PI / 2, 10);// левый глаз анимация\n' + '        var requestAnimation = requestAnimationFrame(clipSmail);// запускаем анимацию\n' + '    }\n' + '    else {\n' + '        x = 8;\n' + '        cancelAnimationFrame(requestAnimation); //прекращаем анимацию\n' + '        drawEllipse(ctx, [20, 25], [8, 5], Math.PI / 2, 10);// возвращаем глаз в первоначальное положение\n' + '    }\n' + '    x -= 0.35;\n' + '};\n' + '$(\'#smile\')[0].addEventListener(\'click\', function (e) {\n' + '//проверям кликаем ли мышкой в проскости смайла\n' + '    if (Math.sqrt(Math.pow(e.offsetX - 35, 2) + Math.pow(e.offsetY - 35, 2)) <= 30) {\n' + '        //если все ок запускаем анимацию\n' + '        requestAnimationFrame(clipSmail);\n' + '    }\n' + '\n' + '\n' + '})\n' + '//рисуем элипс\n' + 'function drawEllipse(ctx, coords, sizes, angle) {\n' + '    ctx.beginPath();\n' + '    ctx.save(); // сохраняем стейт контекста\n' + '    ctx.translate(coords[0], coords[1]); // перемещаем координаты в центр эллипса\n' + '    ctx.rotate(angle); // поворачиваем координатную сетку на нужный угол\n' + '    ctx.scale(1, sizes[1] / sizes[0]); // сжимаем по вертикали\n' + '    ctx.arc(0, 0, sizes[0], 0, Math.PI * 2); // рисуем круг\n' + '    ctx.restore(); // восстанавливает стейт, иначе обводка и заливка будут сплющенными и повёрнутыми\n' + '    ctx.fillStyle = \'#000\';\n' + '    ctx.fill();\n' + '    ctx.stroke(); // обводим\n' + '    ctx.closePath();\n' + '}\n';
+
+var html1601 = '<canvas id="smile"></canvas>';
+
+var fun1601 = function fun1601() {
+    elWin.innerHTML = html1601;
+    var x = 8;
+    var ctx;
+    clipSmail(false); //рисуем на canvas смайл без анимации
+    function clipSmail() {
+        var i = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+
+
+        ctx = smile.getContext('2d');
+        ctx.clearRect(0, 0, smile.width, smile.height);
+        smile.width = $('#smile')[0].clientWidth;
+        smile.height = $('#smile')[0].clientHeight;
+
+        ctx.beginPath();
+
+        ctx.fillStyle = '#FFE073';
+        ctx.arc(35, 35, 30, 0, Math.PI * 2, true); // Внешняя окружность
+        ctx.fill();
+        ctx.stroke();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.fillStyle = '#fff';
+        ctx.moveTo(20, 45);
+        ctx.arc(35, 45, 15, 0, Math.PI, false); // рот (по часовой стрелке)
+        ctx.moveTo(25, 20);
+
+        ctx.fill();
+        ctx.stroke();
+        ctx.closePath();
+        ctx.lineWidth = 1;
+
+        drawEllipse(ctx, [50, 25], [8, 5], Math.PI / 2, 10); //правый глаз
+        drawEllipse(ctx, [20, 25], [1, 5], Math.PI / 2, 10); // левый зрачек
+        if (x > 0 && x != 9 && i) {
+            drawEllipse(ctx, [20, 25], [x, 5], Math.PI / 2, 10); // левый глаз анимация
+            var requestAnimation = requestAnimationFrame(clipSmail); // запускаем анимацию
+        } else {
+            x = 8;
+            cancelAnimationFrame(requestAnimation); //прекращаем анимацию
+            drawEllipse(ctx, [20, 25], [8, 5], Math.PI / 2, 10); // возвращаем глаз в первоначальное положение
+        }
+        x -= 0.35;
+    };
+    $('#smile')[0].addEventListener('click', function (e) {
+        //проверям кликаем ли мышкой в проскости смайла
+        if (Math.sqrt(Math.pow(e.offsetX - 35, 2) + Math.pow(e.offsetY - 35, 2)) <= 30) {
+            //если все ок запускаем анимацию
+            requestAnimationFrame(clipSmail);
+        }
+    });
+    //рисуем элипс
+    function drawEllipse(ctx, coords, sizes, angle) {
+        ctx.beginPath();
+        ctx.save(); // сохраняем стейт контекста
+        ctx.translate(coords[0], coords[1]); // перемещаем координаты в центр эллипса
+        ctx.rotate(angle); // поворачиваем координатную сетку на нужный угол
+        ctx.scale(1, sizes[1] / sizes[0]); // сжимаем по вертикали
+        ctx.arc(0, 0, sizes[0], 0, Math.PI * 2); // рисуем круг
+        ctx.restore(); // восстанавливает стейт, иначе обводка и заливка будут сплющенными и повёрнутыми
+        ctx.fillStyle = '#000';
+        ctx.fill();
+        ctx.stroke(); // обводим
+        ctx.closePath();
+    }
+};
+
+TextWindows[1601] = new Dz(html1601, js1601, win1601, fun1601);
+////// End 16-01

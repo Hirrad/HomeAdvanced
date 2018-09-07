@@ -1059,6 +1059,10 @@ footer {
 form > div {
   position: relative; }
 
+#smile {
+  width: 70px;
+  height: 70px; }
+
 .b {
   display: inline-block;
   padding: 30px; }
