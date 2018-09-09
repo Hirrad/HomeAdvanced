@@ -110,7 +110,7 @@ let html1701='            <svg id="ukraine" s viewbox="0 0 1000 670" width="1000
     '            </svg>\n';
 
 let fun1701 = function(){
-    elWin.innerHTML='';
+    elWin.innerHTML=html1701;
     (function () {
         var SvgUk, arrColors, i = 0;
         SvgUk = document.querySelectorAll('#ukraine>path');
