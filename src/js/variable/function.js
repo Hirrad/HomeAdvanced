@@ -75,3 +75,9 @@ function canvasApp () {
 
 }
 ///// конец рисования сетки для canvas
+
+/// function random for min to max
+function getRandom(min, max) {
+    return Math.floor(Math.random() * ((max+1) - min)) + min;
+}
+////
